@@ -1,9 +1,6 @@
 # Secretos
 .env
 
-# Base vectorial local
-chroma_db/
-
 # Jupyter
 .ipynb_checkpoints/
 
