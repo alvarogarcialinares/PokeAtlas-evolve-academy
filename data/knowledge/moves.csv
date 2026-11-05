@@ -1,0 +1,938 @@
+id,move,generation,type,damage_class,power,accuracy,pp,priority,effect_chance,short_effect
+1,pound,gen-i,normal,physical,40.0,100.0,35.0,0,,Inflicts regular damage with no additional effect.
+2,karate-chop,gen-i,fighting,physical,50.0,100.0,25.0,0,,Has an increased chance for a critical hit.
+3,double-slap,gen-i,normal,physical,15.0,85.0,10.0,0,,Hits 2-5 times in one turn.
+4,comet-punch,gen-i,normal,physical,18.0,85.0,15.0,0,,Hits 2-5 times in one turn.
+5,mega-punch,gen-i,normal,physical,80.0,85.0,20.0,0,,Inflicts regular damage with no additional effect.
+6,pay-day,gen-i,normal,physical,40.0,100.0,20.0,0,,Scatters money on the ground worth five times the user’s level.
+7,fire-punch,gen-i,fire,physical,75.0,100.0,15.0,0,10.0,Has a chance to burn the target.
+8,ice-punch,gen-i,ice,physical,75.0,100.0,15.0,0,10.0,Has a chance to freeze the target.
+9,thunder-punch,gen-i,electric,physical,75.0,100.0,15.0,0,10.0,Has a chance to paralyze the target.
+10,scratch,gen-i,normal,physical,40.0,100.0,35.0,0,,Inflicts regular damage with no additional effect.
+11,vice-grip,gen-i,normal,physical,55.0,100.0,30.0,0,,Inflicts regular damage with no additional effect.
+12,guillotine,gen-i,normal,physical,,30.0,5.0,0,,Causes a one-hit KO.
+13,razor-wind,gen-i,normal,special,80.0,100.0,10.0,0,,Requires a turn to charge before attacking.
+14,swords-dance,gen-i,normal,status,,,20.0,0,,Raises the user’s Attack by two stages.
+15,cut,gen-i,normal,physical,50.0,95.0,30.0,0,,Inflicts regular damage with no additional effect.
+16,gust,gen-i,flying,special,40.0,100.0,35.0,0,,Inflicts regular damage and can hit Pokémon in the air.
+17,wing-attack,gen-i,flying,physical,60.0,100.0,35.0,0,,Inflicts regular damage with no additional effect.
+18,whirlwind,gen-i,normal,status,,,20.0,-6,,Immediately ends wild battles.  Forces trainers to switch Pokémon.
+19,fly,gen-i,flying,physical,90.0,95.0,15.0,0,,"User flies high into the air, dodging all attacks, and hits next turn."
+20,bind,gen-i,normal,physical,15.0,85.0,20.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+21,slam,gen-i,normal,physical,80.0,75.0,20.0,0,,Inflicts regular damage with no additional effect.
+22,vine-whip,gen-i,grass,physical,45.0,100.0,25.0,0,,Inflicts regular damage with no additional effect.
+23,stomp,gen-i,normal,physical,65.0,100.0,20.0,0,30.0,Has a chance to make the target flinch.
+24,double-kick,gen-i,fighting,physical,30.0,100.0,30.0,0,,Hits twice in one turn.
+25,mega-kick,gen-i,normal,physical,120.0,75.0,5.0,0,,Inflicts regular damage with no additional effect.
+26,jump-kick,gen-i,fighting,physical,100.0,95.0,10.0,0,,"If the user misses, it takes half the damage it would have inflicted in recoil."
+27,rolling-kick,gen-i,fighting,physical,60.0,85.0,15.0,0,30.0,Has a chance to make the target flinch.
+28,sand-attack,gen-i,ground,status,,100.0,15.0,0,,Lowers the target’s accuracy by one stage.
+29,headbutt,gen-i,normal,physical,70.0,100.0,15.0,0,30.0,Has a chance to make the target flinch.
+30,horn-attack,gen-i,normal,physical,65.0,100.0,25.0,0,,Inflicts regular damage with no additional effect.
+31,fury-attack,gen-i,normal,physical,15.0,85.0,20.0,0,,Hits 2-5 times in one turn.
+32,horn-drill,gen-i,normal,physical,,30.0,5.0,0,,Causes a one-hit KO.
+33,tackle,gen-i,normal,physical,40.0,100.0,35.0,0,,Inflicts regular damage with no additional effect.
+34,body-slam,gen-i,normal,physical,85.0,100.0,15.0,0,30.0,Has a chance to paralyze the target.
+35,wrap,gen-i,normal,physical,15.0,90.0,20.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+36,take-down,gen-i,normal,physical,90.0,85.0,20.0,0,,User receives 1/4 the damage it inflicts in recoil.
+37,thrash,gen-i,normal,physical,120.0,100.0,10.0,0,,"Hits every turn for 2-3 turns, then confuses the user."
+38,double-edge,gen-i,normal,physical,120.0,100.0,15.0,0,,User receives 1/3 the damage inflicted in recoil.
+39,tail-whip,gen-i,normal,status,,100.0,30.0,0,,Lowers the target’s Defense by one stage.
+40,poison-sting,gen-i,poison,physical,15.0,100.0,35.0,0,30.0,Has a chance to poison the target.
+41,twineedle,gen-i,bug,physical,25.0,100.0,20.0,0,20.0,Hits twice in the same turn.  Has a chance to poison the target.
+42,pin-missile,gen-i,bug,physical,25.0,95.0,20.0,0,,Hits 2-5 times in one turn.
+43,leer,gen-i,normal,status,,100.0,30.0,0,100.0,Lowers the target’s Defense by one stage.
+44,bite,gen-i,dark,physical,60.0,100.0,25.0,0,30.0,Has a chance to make the target flinch.
+45,growl,gen-i,normal,status,,100.0,40.0,0,,Lowers the target’s Attack by one stage.
+46,roar,gen-i,normal,status,,,20.0,-6,,Immediately ends wild battles.  Forces trainers to switch Pokémon.
+47,sing,gen-i,normal,status,,55.0,15.0,0,,Puts the target to sleep.
+48,supersonic,gen-i,normal,status,,55.0,20.0,0,,Confuses the target.
+49,sonic-boom,gen-i,normal,special,,90.0,20.0,0,,Inflicts 20 points of damage.
+50,disable,gen-i,normal,status,,100.0,20.0,0,,Disables the target’s last used move for 1-8 turns.
+51,acid,gen-i,poison,special,40.0,100.0,30.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+52,ember,gen-i,fire,special,40.0,100.0,25.0,0,10.0,Has a chance to burn the target.
+53,flamethrower,gen-i,fire,special,90.0,100.0,15.0,0,10.0,Has a chance to burn the target.
+54,mist,gen-i,ice,status,,,30.0,0,,Protects the user’s stats from being changed by enemy moves.
+55,water-gun,gen-i,water,special,40.0,100.0,25.0,0,,Inflicts regular damage with no additional effect.
+56,hydro-pump,gen-i,water,special,110.0,80.0,5.0,0,,Inflicts regular damage with no additional effect.
+57,surf,gen-i,water,special,90.0,100.0,15.0,0,,Inflicts regular damage and can hit Dive users.
+58,ice-beam,gen-i,ice,special,90.0,100.0,10.0,0,10.0,Has a chance to freeze the target.
+59,blizzard,gen-i,ice,special,110.0,70.0,5.0,0,10.0,Has a chance to freeze the target.
+60,psybeam,gen-i,psychic,special,65.0,100.0,20.0,0,10.0,Has a chance to confuse the target.
+61,bubble-beam,gen-i,water,special,65.0,100.0,20.0,0,10.0,Has a chance to lower the target’s Speed by one stage.
+62,aurora-beam,gen-i,ice,special,65.0,100.0,20.0,0,10.0,Has a chance to lower the target’s Attack by one stage.
+63,hyper-beam,gen-i,normal,special,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+64,peck,gen-i,flying,physical,35.0,100.0,35.0,0,,Inflicts regular damage with no additional effect.
+65,drill-peck,gen-i,flying,physical,80.0,100.0,20.0,0,,Inflicts regular damage with no additional effect.
+66,submission,gen-i,fighting,physical,80.0,80.0,20.0,0,,User receives 1/4 the damage it inflicts in recoil.
+67,low-kick,gen-i,fighting,physical,,100.0,20.0,0,,"Inflicts more damage to heavier targets, with a maximum of 120 power."
+68,counter,gen-i,fighting,physical,,100.0,20.0,-5,,Inflicts twice the damage the user received from the last physical hit it took.
+69,seismic-toss,gen-i,fighting,physical,,100.0,20.0,0,,Inflicts damage equal to the user’s level.
+70,strength,gen-i,normal,physical,80.0,100.0,15.0,0,,Inflicts regular damage with no additional effect.
+71,absorb,gen-i,grass,special,20.0,100.0,25.0,0,,Drains half the damage inflicted to heal the user.
+72,mega-drain,gen-i,grass,special,40.0,100.0,15.0,0,,Drains half the damage inflicted to heal the user.
+73,leech-seed,gen-i,grass,status,,90.0,10.0,0,,"Seeds the target, stealing HP from it every turn."
+74,growth,gen-i,normal,status,,,20.0,0,,Raises the user’s Attack and Special Attack by one stage.
+75,razor-leaf,gen-i,grass,physical,55.0,95.0,25.0,0,,Has an increased chance for a critical hit.
+76,solar-beam,gen-i,grass,special,120.0,100.0,10.0,0,,Requires a turn to charge before attacking.
+77,poison-powder,gen-i,poison,status,,75.0,35.0,0,,Poisons the target.
+78,stun-spore,gen-i,grass,status,,75.0,30.0,0,,Paralyzes the target.
+79,sleep-powder,gen-i,grass,status,,75.0,15.0,0,,Puts the target to sleep.
+80,petal-dance,gen-i,grass,special,120.0,100.0,10.0,0,,"Hits every turn for 2-3 turns, then confuses the user."
+81,string-shot,gen-i,bug,status,,95.0,40.0,0,,Lowers the target’s Speed by two stages.
+82,dragon-rage,gen-i,dragon,special,,100.0,10.0,0,,Inflicts 40 points of damage.
+83,fire-spin,gen-i,fire,special,35.0,85.0,15.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+84,thunder-shock,gen-i,electric,special,40.0,100.0,30.0,0,10.0,Has a chance to paralyze the target.
+85,thunderbolt,gen-i,electric,special,90.0,100.0,15.0,0,10.0,Has a chance to paralyze the target.
+86,thunder-wave,gen-i,electric,status,,90.0,20.0,0,,Paralyzes the target.
+87,thunder,gen-i,electric,special,110.0,70.0,10.0,0,30.0,Has a chance to paralyze the target.
+88,rock-throw,gen-i,rock,physical,50.0,90.0,15.0,0,,Inflicts regular damage with no additional effect.
+89,earthquake,gen-i,ground,physical,100.0,100.0,10.0,0,,Inflicts regular damage and can hit Dig users.
+90,fissure,gen-i,ground,physical,,30.0,5.0,0,,Causes a one-hit KO.
+91,dig,gen-i,ground,physical,80.0,100.0,10.0,0,,"User digs underground, dodging all attacks, and hits next turn."
+92,toxic,gen-i,poison,status,,90.0,10.0,0,,"Badly poisons the target, inflicting more damage every turn."
+93,confusion,gen-i,psychic,special,50.0,100.0,25.0,0,10.0,Has a chance to confuse the target.
+94,psychic,gen-i,psychic,special,90.0,100.0,10.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+95,hypnosis,gen-i,psychic,status,,60.0,20.0,0,,Puts the target to sleep.
+96,meditate,gen-i,psychic,status,,,40.0,0,,Raises the user’s Attack by one stage.
+97,agility,gen-i,psychic,status,,,30.0,0,,Raises the user’s Speed by two stages.
+98,quick-attack,gen-i,normal,physical,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+99,rage,gen-i,normal,physical,20.0,100.0,20.0,0,,"If the user is hit after using this move, its Attack rises by one stage."
+100,teleport,gen-i,psychic,status,,,20.0,-6,,Immediately ends wild battles.  No effect otherwise.
+101,night-shade,gen-i,ghost,special,,100.0,15.0,0,,Inflicts damage equal to the user’s level.
+102,mimic,gen-i,normal,status,,,10.0,0,,Copies the target’s last used move.
+103,screech,gen-i,normal,status,,85.0,40.0,0,,Lowers the target’s Defense by two stages.
+104,double-team,gen-i,normal,status,,,15.0,0,,Raises the user’s evasion by one stage.
+105,recover,gen-i,normal,status,,,5.0,0,,Heals the user by half its max HP.
+106,harden,gen-i,normal,status,,,30.0,0,,Raises the user’s Defense by one stage.
+107,minimize,gen-i,normal,status,,,10.0,0,,Raises the user’s evasion by two stages.
+108,smokescreen,gen-i,normal,status,,100.0,20.0,0,,Lowers the target’s accuracy by one stage.
+109,confuse-ray,gen-i,ghost,status,,100.0,10.0,0,,Confuses the target.
+110,withdraw,gen-i,water,status,,,40.0,0,,Raises the user’s Defense by one stage.
+111,defense-curl,gen-i,normal,status,,,40.0,0,,Raises user’s Defense by one stage.
+112,barrier,gen-i,psychic,status,,,20.0,0,,Raises the user’s Defense by two stages.
+113,light-screen,gen-i,psychic,status,,,30.0,0,,Reduces damage from special attacks by 50% for five turns.
+114,haze,gen-i,ice,status,,,30.0,0,,"Resets all Pokémon’s stats, accuracy, and evasion."
+115,reflect,gen-i,psychic,status,,,20.0,0,,Reduces damage from physical attacks by half.
+116,focus-energy,gen-i,normal,status,,,30.0,0,,Increases the user’s chance to score a critical hit.
+117,bide,gen-i,normal,physical,,,10.0,1,,"User waits for two turns, then hits back for twice the damage it took."
+118,metronome,gen-i,normal,status,,,10.0,0,,Randomly selects and uses any move in the game.
+119,mirror-move,gen-i,flying,status,,,20.0,0,,Uses the target’s last used move.
+120,self-destruct,gen-i,normal,physical,200.0,100.0,5.0,0,,User faints.
+121,egg-bomb,gen-i,normal,physical,100.0,75.0,10.0,0,,Inflicts regular damage with no additional effect.
+122,lick,gen-i,ghost,physical,30.0,100.0,30.0,0,30.0,Has a chance to paralyze the target.
+123,smog,gen-i,poison,special,30.0,70.0,20.0,0,40.0,Has a chance to poison the target.
+124,sludge,gen-i,poison,special,65.0,100.0,20.0,0,30.0,Has a chance to poison the target.
+125,bone-club,gen-i,ground,physical,65.0,85.0,20.0,0,10.0,Has a chance to make the target flinch.
+126,fire-blast,gen-i,fire,special,110.0,85.0,5.0,0,10.0,Has a chance to burn the target.
+127,waterfall,gen-i,water,physical,80.0,100.0,15.0,0,20.0,Has a chance to make the target flinch.
+128,clamp,gen-i,water,physical,35.0,85.0,15.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+129,swift,gen-i,normal,special,60.0,,20.0,0,,Never misses.
+130,skull-bash,gen-i,normal,physical,130.0,100.0,10.0,0,100.0,Raises the user’s Defense by one stage.  User charges for one turn before attacking.
+131,spike-cannon,gen-i,normal,physical,20.0,100.0,15.0,0,,Hits 2-5 times in one turn.
+132,constrict,gen-i,normal,physical,10.0,100.0,35.0,0,10.0,Has a chance to lower the target’s Speed by one stage.
+133,amnesia,gen-i,psychic,status,,,20.0,0,,Raises the user’s Special Defense by two stages.
+134,kinesis,gen-i,psychic,status,,80.0,15.0,0,,Lowers the target’s accuracy by one stage.
+135,soft-boiled,gen-i,normal,status,,,5.0,0,,Heals the user by half its max HP.
+136,high-jump-kick,gen-i,fighting,physical,130.0,90.0,10.0,0,,"If the user misses, it takes half the damage it would have inflicted in recoil."
+137,glare,gen-i,normal,status,,100.0,30.0,0,,Paralyzes the target.
+138,dream-eater,gen-i,psychic,special,100.0,100.0,15.0,0,,Only works on sleeping Pokémon.  Drains half the damage inflicted to heal the user.
+139,poison-gas,gen-i,poison,status,,90.0,40.0,0,,Poisons the target.
+140,barrage,gen-i,normal,physical,15.0,85.0,20.0,0,,Hits 2-5 times in one turn.
+141,leech-life,gen-i,bug,physical,80.0,100.0,10.0,0,,Drains half the damage inflicted to heal the user.
+142,lovely-kiss,gen-i,normal,status,,75.0,10.0,0,,Puts the target to sleep.
+143,sky-attack,gen-i,flying,physical,140.0,90.0,5.0,0,30.0,User charges for one turn before attacking.  Has a chance to make the target flinch.
+144,transform,gen-i,normal,status,,,10.0,0,,User becomes a copy of the target until it leaves battle.
+145,bubble,gen-i,water,special,40.0,100.0,30.0,0,10.0,Has a chance to lower the target’s Speed by one stage.
+146,dizzy-punch,gen-i,normal,physical,70.0,100.0,10.0,0,20.0,Has a chance to confuse the target.
+147,spore,gen-i,grass,status,,100.0,15.0,0,,Puts the target to sleep.
+148,flash,gen-i,normal,status,,100.0,20.0,0,,Lowers the target’s accuracy by one stage.
+149,psywave,gen-i,psychic,special,,100.0,15.0,0,,Inflicts damage between 50% and 150% of the user’s level.
+150,splash,gen-i,normal,status,,,40.0,0,,Does nothing.
+151,acid-armor,gen-i,poison,status,,,20.0,0,,Raises the user’s Defense by two stages.
+152,crabhammer,gen-i,water,physical,100.0,90.0,10.0,0,,Has an increased chance for a critical hit.
+153,explosion,gen-i,normal,physical,250.0,100.0,5.0,0,,User faints.
+154,fury-swipes,gen-i,normal,physical,18.0,80.0,15.0,0,,Hits 2-5 times in one turn.
+155,bonemerang,gen-i,ground,physical,50.0,90.0,10.0,0,,Hits twice in one turn.
+156,rest,gen-i,psychic,status,,,5.0,0,,"User sleeps for two turns, completely healing itself."
+157,rock-slide,gen-i,rock,physical,75.0,90.0,10.0,0,30.0,Has a chance to make the target flinch.
+158,hyper-fang,gen-i,normal,physical,80.0,90.0,15.0,0,10.0,Has a chance to make the target flinch.
+159,sharpen,gen-i,normal,status,,,30.0,0,,Raises the user’s Attack by one stage.
+160,conversion,gen-i,normal,status,,,30.0,0,,User’s type changes to the type of one of its moves at random.
+161,tri-attack,gen-i,normal,special,80.0,100.0,10.0,0,20.0,"Has a chance to burn, freeze, or paralyze the target."
+162,super-fang,gen-i,normal,physical,,90.0,10.0,0,,Inflicts damage equal to half the target’s HP.
+163,slash,gen-i,normal,physical,70.0,100.0,20.0,0,,Has an increased chance for a critical hit.
+164,substitute,gen-i,normal,status,,,10.0,0,,"Transfers 1/4 of the user’s max HP into a doll, protecting the user from further damage or status changes until it breaks."
+165,struggle,gen-i,normal,physical,50.0,,1.0,0,,User takes 1/4 its max HP in recoil.
+166,sketch,gen-ii,normal,status,,,1.0,0,,Permanently becomes the target’s last used move.
+167,triple-kick,gen-ii,fighting,physical,10.0,90.0,10.0,0,,"Hits three times, increasing power by 100% with each successful hit."
+168,thief,gen-ii,dark,physical,60.0,100.0,25.0,0,,Takes the target’s item.
+169,spider-web,gen-ii,bug,status,,,10.0,0,,Prevents the target from leaving battle.
+170,mind-reader,gen-ii,normal,status,,,5.0,0,,Ensures that the user’s next move will hit the target.
+171,nightmare,gen-ii,ghost,status,,100.0,15.0,0,,Target loses 1/4 its max HP every turn as long as it’s asleep.
+172,flame-wheel,gen-ii,fire,physical,60.0,100.0,25.0,0,10.0,Has a chance to burn the target.  Lets frozen Pokémon thaw themselves.
+173,snore,gen-ii,normal,special,50.0,100.0,15.0,0,30.0,Has a chance to make the target flinch.  Only works if the user is sleeping.
+174,curse,gen-ii,ghost,status,,,10.0,0,,Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.
+175,flail,gen-ii,normal,physical,,100.0,15.0,0,,"Inflicts more damage when the user has less HP remaining, with a maximum of 200 power."
+176,conversion-2,gen-ii,normal,status,,,30.0,0,,Changes the user’s type to a random type either resistant or immune to the last move used against it.
+177,aeroblast,gen-ii,flying,special,100.0,95.0,5.0,0,,Has an increased chance for a critical hit.
+178,cotton-spore,gen-ii,grass,status,,100.0,40.0,0,,Lowers the target’s Speed by two stages.
+179,reversal,gen-ii,fighting,physical,,100.0,15.0,0,,"Inflicts more damage when the user has less HP remaining, with a maximum of 200 power."
+180,spite,gen-ii,ghost,status,,100.0,10.0,0,,Lowers the PP of the target’s last used move by 4.
+181,powder-snow,gen-ii,ice,special,40.0,100.0,25.0,0,10.0,Has a chance to freeze the target.
+182,protect,gen-ii,normal,status,,,10.0,4,,Prevents any moves from hitting the user this turn.
+183,mach-punch,gen-ii,fighting,physical,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+184,scary-face,gen-ii,normal,status,,100.0,10.0,0,,Lowers the target’s Speed by two stages.
+185,feint-attack,gen-ii,dark,physical,60.0,,20.0,0,,Never misses.
+186,sweet-kiss,gen-ii,fairy,status,,75.0,10.0,0,,Confuses the target.
+187,belly-drum,gen-ii,normal,status,,,10.0,0,,User pays half its max HP to max out its Attack.
+188,sludge-bomb,gen-ii,poison,special,90.0,100.0,10.0,0,30.0,Has a chance to poison the target.
+189,mud-slap,gen-ii,ground,special,20.0,100.0,10.0,0,100.0,Has a chance to lower the target’s accuracy by one stage.
+190,octazooka,gen-ii,water,special,65.0,85.0,10.0,0,50.0,Has a chance to lower the target’s accuracy by one stage.
+191,spikes,gen-ii,ground,status,,,20.0,0,,"Scatters Spikes, hurting opposing Pokémon that switch in."
+192,zap-cannon,gen-ii,electric,special,120.0,50.0,5.0,0,100.0,Has a chance to paralyze the target.
+193,foresight,gen-ii,normal,status,,,40.0,0,,"Forces the target to have no Evade, and allows it to be hit by Normal and Fighting moves even if it’s a Ghost."
+194,destiny-bond,gen-ii,ghost,status,,,5.0,0,,"If the user faints this turn, the target automatically will, too."
+195,perish-song,gen-ii,normal,status,,,5.0,0,,User and target both faint after three turns.
+196,icy-wind,gen-ii,ice,special,55.0,95.0,15.0,0,100.0,Has a chance to lower the target’s Speed by one stage.
+197,detect,gen-ii,fighting,status,,,5.0,4,,Prevents any moves from hitting the user this turn.
+198,bone-rush,gen-ii,ground,physical,25.0,90.0,10.0,0,,Hits 2-5 times in one turn.
+199,lock-on,gen-ii,normal,status,,,5.0,0,,Ensures that the user’s next move will hit the target.
+200,outrage,gen-ii,dragon,physical,120.0,100.0,10.0,0,,"Hits every turn for 2-3 turns, then confuses the user."
+201,sandstorm,gen-ii,rock,status,,,10.0,0,,Changes the weather to a sandstorm for five turns.
+202,giga-drain,gen-ii,grass,special,75.0,100.0,10.0,0,,Drains half the damage inflicted to heal the user.
+203,endure,gen-ii,normal,status,,,10.0,4,,Prevents the user’s HP from lowering below 1 this turn.
+204,charm,gen-ii,fairy,status,,100.0,20.0,0,,Lowers the target’s Attack by two stages.
+205,rollout,gen-ii,rock,physical,30.0,90.0,20.0,0,,"Power doubles every turn this move is used in succession after the first, resetting after five turns."
+206,false-swipe,gen-ii,normal,physical,40.0,100.0,40.0,0,,Cannot lower the target’s HP below 1.
+207,swagger,gen-ii,normal,status,,85.0,15.0,0,,Raises the target’s Attack by two stages and confuses the target.
+208,milk-drink,gen-ii,normal,status,,,5.0,0,,Heals the user by half its max HP.
+209,spark,gen-ii,electric,physical,65.0,100.0,20.0,0,30.0,Has a chance to paralyze the target.
+210,fury-cutter,gen-ii,bug,physical,40.0,95.0,20.0,0,,"Power doubles every turn this move is used in succession after the first, maxing out after five turns."
+211,steel-wing,gen-ii,steel,physical,70.0,90.0,25.0,0,10.0,Has a chance to raise the user’s Defense by one stage.
+212,mean-look,gen-ii,normal,status,,,5.0,0,,Prevents the target from leaving battle.
+213,attract,gen-ii,normal,status,,100.0,15.0,0,,"Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user."
+214,sleep-talk,gen-ii,normal,status,,,10.0,0,,Randomly uses one of the user’s other three moves.  Only works if the user is sleeping.
+215,heal-bell,gen-ii,normal,status,,,5.0,0,,Cures the entire party of major status effects.
+216,return,gen-ii,normal,physical,,100.0,20.0,0,,"Power increases with happiness, up to a maximum of 102."
+217,present,gen-ii,normal,physical,,90.0,15.0,0,,Randomly inflicts damage with power from 40 to 120 or heals the target for 1/4 its max HP.
+218,frustration,gen-ii,normal,physical,,100.0,20.0,0,,"Power increases as happiness decreases, up to a maximum of 102."
+219,safeguard,gen-ii,normal,status,,,25.0,0,,Protects the user’s field from major status ailments and confusion for five turns.
+220,pain-split,gen-ii,normal,status,,,20.0,0,,Sets the user’s and targets’s HP to the average of their current HP.
+221,sacred-fire,gen-ii,fire,physical,100.0,95.0,5.0,0,50.0,Has a chance to burn the target.  Lets frozen Pokémon thaw themselves.
+222,magnitude,gen-ii,ground,physical,,100.0,30.0,0,,Power varies randomly from 10 to 150.
+223,dynamic-punch,gen-ii,fighting,physical,100.0,50.0,5.0,0,100.0,Has a chance to confuse the target.
+224,megahorn,gen-ii,bug,physical,120.0,85.0,10.0,0,,Inflicts regular damage with no additional effect.
+225,dragon-breath,gen-ii,dragon,special,60.0,100.0,20.0,0,30.0,Has a chance to paralyze the target.
+226,baton-pass,gen-ii,normal,status,,,40.0,0,,Allows the trainer to switch out the user and pass effects along to its replacement.
+227,encore,gen-ii,normal,status,,100.0,5.0,0,,Forces the target to repeat its last used move every turn for 2 to 6 turns.
+228,pursuit,gen-ii,dark,physical,40.0,100.0,20.0,0,,"Has double power against, and can hit, Pokémon attempting to switch out."
+229,rapid-spin,gen-ii,normal,physical,50.0,100.0,40.0,0,100.0,"Frees the user from binding moves, removes Leech Seed, and blows away Spikes."
+230,sweet-scent,gen-ii,normal,status,,100.0,20.0,0,,Lowers the target’s evasion by one stage.
+231,iron-tail,gen-ii,steel,physical,100.0,75.0,15.0,0,30.0,Has a chance to lower the target’s Defense by one stage.
+232,metal-claw,gen-ii,steel,physical,50.0,95.0,35.0,0,10.0,Has a chance to raise the user’s Attack by one stage.
+233,vital-throw,gen-ii,fighting,physical,70.0,,10.0,-1,,Never misses.
+234,morning-sun,gen-ii,normal,status,,,5.0,0,,Heals the user by half its max HP.  Affected by weather.
+235,synthesis,gen-ii,grass,status,,,5.0,0,,Heals the user by half its max HP.  Affected by weather.
+236,moonlight,gen-ii,fairy,status,,,5.0,0,,Heals the user by half its max HP.  Affected by weather.
+237,hidden-power,gen-ii,normal,special,60.0,100.0,15.0,0,,Power and type depend upon user’s IVs.  Power can range from 30 to 70.
+238,cross-chop,gen-ii,fighting,physical,100.0,80.0,5.0,0,,Has an increased chance for a critical hit.
+239,twister,gen-ii,dragon,special,40.0,100.0,20.0,0,20.0,Has a chance to make the target flinch.
+240,rain-dance,gen-ii,water,status,,,5.0,0,,Changes the weather to rain for five turns.
+241,sunny-day,gen-ii,fire,status,,,5.0,0,,Changes the weather to sunny for five turns.
+242,crunch,gen-ii,dark,physical,80.0,100.0,15.0,0,20.0,Has a chance to lower the target’s Defense by one stage.
+243,mirror-coat,gen-ii,psychic,special,,100.0,20.0,-5,,Inflicts twice the damage the user received from the last special hit it took.
+244,psych-up,gen-ii,normal,status,,,10.0,0,,Discards the user’s stat changes and copies the target’s.
+245,extreme-speed,gen-ii,normal,physical,80.0,100.0,5.0,2,,Inflicts regular damage with no additional effect.
+246,ancient-power,gen-ii,rock,special,60.0,100.0,5.0,0,10.0,Has a chance to raise all of the user’s stats by one stage.
+247,shadow-ball,gen-ii,ghost,special,80.0,100.0,15.0,0,20.0,Has a chance to lower the target’s Special Defense by one stage.
+248,future-sight,gen-ii,psychic,special,120.0,100.0,10.0,0,,Hits the target two turns later.
+249,rock-smash,gen-ii,fighting,physical,40.0,100.0,15.0,0,50.0,Has a chance to lower the target’s Defense by one stage.
+250,whirlpool,gen-ii,water,special,35.0,85.0,15.0,0,100.0,Prevents the target from leaving battle and inflicts 1/16 its max HP in damage for 2-5 turns.
+251,beat-up,gen-ii,dark,physical,,100.0,10.0,0,,Hits once for every conscious Pokémon the trainer has.
+252,fake-out,gen-iii,normal,physical,40.0,100.0,10.0,3,100.0,Can only be used as the first move after the user enters battle.  Causes the target to flinch.
+253,uproar,gen-iii,normal,special,90.0,100.0,10.0,0,,Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.
+254,stockpile,gen-iii,normal,status,,,20.0,0,,Stores energy up to three times for use with Spit Up and Swallow.
+255,spit-up,gen-iii,normal,special,,100.0,10.0,0,,Power is 100 times the amount of energy Stockpiled.
+256,swallow,gen-iii,normal,status,,,10.0,0,,"Recovers 1/4 HP after one Stockpile, 1/2 HP after two Stockpiles, or full HP after three Stockpiles."
+257,heat-wave,gen-iii,fire,special,95.0,90.0,10.0,0,10.0,Has a chance to burn the target.
+258,hail,gen-iii,ice,status,,,10.0,0,,Changes the weather to a hailstorm for five turns.
+259,torment,gen-iii,dark,status,,100.0,15.0,0,,Prevents the target from using the same move twice in a row.
+260,flatter,gen-iii,dark,status,,100.0,15.0,0,,Raises the target’s Special Attack by one stage and confuses the target.
+261,will-o-wisp,gen-iii,fire,status,,85.0,15.0,0,,Burns the target.
+262,memento,gen-iii,dark,status,,100.0,10.0,0,,Lowers the target’s Attack and Special Attack by two stages.  User faints.
+263,facade,gen-iii,normal,physical,70.0,100.0,20.0,0,,"Power doubles if user is burned, paralyzed, or poisoned."
+264,focus-punch,gen-iii,fighting,physical,150.0,100.0,20.0,-3,,"If the user takes damage before attacking, the attack is canceled."
+265,smelling-salts,gen-iii,normal,physical,70.0,100.0,10.0,0,,"If the target is paralyzed, inflicts double damage and cures the paralysis."
+266,follow-me,gen-iii,normal,status,,,20.0,2,,Redirects the target’s single-target effects to the user for this turn.
+267,nature-power,gen-iii,normal,status,,,20.0,0,,Uses a move which depends upon the terrain.
+268,charge,gen-iii,electric,status,,,20.0,0,,Raises the user’s Special Defense by one stage.  User’s Electric moves have doubled power next turn.
+269,taunt,gen-iii,dark,status,,100.0,20.0,0,,"For the next few turns, the target can only use damaging moves."
+270,helping-hand,gen-iii,normal,status,,,20.0,5,,Ally’s next move inflicts half more damage.
+271,trick,gen-iii,psychic,status,,100.0,10.0,0,,User and target swap items.
+272,role-play,gen-iii,psychic,status,,,10.0,0,,Copies the target’s ability.
+273,wish,gen-iii,normal,status,,,10.0,0,,User will recover half its max HP at the end of the next turn.
+274,assist,gen-iii,normal,status,,,20.0,0,,Randomly selects and uses one of the trainer’s other Pokémon’s moves.
+275,ingrain,gen-iii,grass,status,,,20.0,0,,Prevents the user from leaving battle.  User regains 1/16 of its max HP every turn.
+276,superpower,gen-iii,fighting,physical,120.0,100.0,5.0,0,100.0,Lowers the user’s Attack and Defense by one stage after inflicting damage.
+277,magic-coat,gen-iii,psychic,status,,,15.0,4,,Reflects back the first effect move used on the user this turn.
+278,recycle,gen-iii,normal,status,,,10.0,0,,User recovers the item it last used up.
+279,revenge,gen-iii,fighting,physical,60.0,100.0,10.0,-4,,Inflicts double damage if the user takes damage before attacking this turn.
+280,brick-break,gen-iii,fighting,physical,75.0,100.0,15.0,0,,Destroys Reflect and Light Screen.
+281,yawn,gen-iii,normal,status,,,10.0,0,,Target sleeps at the end of the next turn.
+282,knock-off,gen-iii,dark,physical,65.0,100.0,20.0,0,,Target drops its held item.
+283,endeavor,gen-iii,normal,physical,,100.0,5.0,0,,Lowers the target’s HP to equal the user’s.
+284,eruption,gen-iii,fire,special,150.0,100.0,5.0,0,,"Inflicts more damage when the user has more HP remaining, with a maximum of 150 power."
+285,skill-swap,gen-iii,psychic,status,,,10.0,0,,User and target swap abilities.
+286,imprison,gen-iii,psychic,status,,,10.0,0,,Prevents the target from using any moves that the user also knows.
+287,refresh,gen-iii,normal,status,,,20.0,0,,"Cleanses the user of a burn, paralysis, or poison."
+288,grudge,gen-iii,ghost,status,,,5.0,0,,"If the user faints this turn, the PP of the move that fainted it drops to 0."
+289,snatch,gen-iii,dark,status,,,10.0,4,,"Steals the target’s move, if it’s self-targeted."
+290,secret-power,gen-iii,normal,physical,70.0,100.0,20.0,0,30.0,Has a chance to inflict a status effect which depends upon the terrain.
+291,dive,gen-iii,water,physical,80.0,100.0,10.0,0,,"User dives underwater, dodging all attacks, and hits next turn."
+292,arm-thrust,gen-iii,fighting,physical,15.0,100.0,20.0,0,,Hits 2-5 times in one turn.
+293,camouflage,gen-iii,normal,status,,,20.0,0,,User’s type changes to match the terrain.
+294,tail-glow,gen-iii,bug,status,,,20.0,0,,Raises the user’s Special Attack by three stages.
+295,luster-purge,gen-iii,psychic,special,95.0,100.0,5.0,0,50.0,Has a chance to lower the target’s Special Defense by one stage.
+296,mist-ball,gen-iii,psychic,special,95.0,100.0,5.0,0,50.0,Has a chance to lower the target’s Special Attack by one stage.
+297,feather-dance,gen-iii,flying,status,,100.0,15.0,0,,Lowers the target’s Attack by two stages.
+298,teeter-dance,gen-iii,normal,status,,100.0,20.0,0,,Confuses the target.
+299,blaze-kick,gen-iii,fire,physical,85.0,90.0,10.0,0,10.0,Has an increased chance for a critical hit and a chance to burn the target.
+300,mud-sport,gen-iii,ground,status,,,15.0,0,,Halves all Electric-type damage.
+301,ice-ball,gen-iii,ice,physical,30.0,90.0,20.0,0,,"Power doubles every turn this move is used in succession after the first, resetting after five turns."
+302,needle-arm,gen-iii,grass,physical,60.0,100.0,15.0,0,30.0,Has a chance to make the target flinch.
+303,slack-off,gen-iii,normal,status,,,5.0,0,,Heals the user by half its max HP.
+304,hyper-voice,gen-iii,normal,special,90.0,100.0,10.0,0,,Inflicts regular damage with no additional effect.
+305,poison-fang,gen-iii,poison,physical,50.0,100.0,15.0,0,50.0,Has a chance to badly poison the target.
+306,crush-claw,gen-iii,normal,physical,75.0,95.0,10.0,0,50.0,Has a chance to lower the target’s Defense by one stage.
+307,blast-burn,gen-iii,fire,special,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+308,hydro-cannon,gen-iii,water,special,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+309,meteor-mash,gen-iii,steel,physical,90.0,90.0,10.0,0,20.0,Has a chance to raise the user’s Attack by one stage.
+310,astonish,gen-iii,ghost,physical,30.0,100.0,15.0,0,30.0,Has a chance to make the target flinch.
+311,weather-ball,gen-iii,normal,special,50.0,100.0,10.0,0,,"If there be weather, this move has doubled power and the weather’s type."
+312,aromatherapy,gen-iii,grass,status,,,5.0,0,,Cures the entire party of major status effects.
+313,fake-tears,gen-iii,dark,status,,100.0,20.0,0,,Lowers the target’s Special Defense by two stages.
+314,air-cutter,gen-iii,flying,special,60.0,95.0,25.0,0,,Has an increased chance for a critical hit.
+315,overheat,gen-iii,fire,special,130.0,90.0,5.0,0,100.0,Lowers the user’s Special Attack by two stages after inflicting damage.
+316,odor-sleuth,gen-iii,normal,status,,,40.0,0,,"Forces the target to have no Evade, and allows it to be hit by Normal and Fighting moves even if it’s a Ghost."
+317,rock-tomb,gen-iii,rock,physical,60.0,95.0,15.0,0,100.0,Has a chance to lower the target’s Speed by one stage.
+318,silver-wind,gen-iii,bug,special,60.0,100.0,5.0,0,10.0,Has a chance to raise all of the user’s stats by one stage.
+319,metal-sound,gen-iii,steel,status,,85.0,40.0,0,,Lowers the target’s Special Defense by two stages.
+320,grass-whistle,gen-iii,grass,status,,55.0,15.0,0,,Puts the target to sleep.
+321,tickle,gen-iii,normal,status,,100.0,20.0,0,,Lowers the target’s Attack and Defense by one stage.
+322,cosmic-power,gen-iii,psychic,status,,,20.0,0,,Raises the user’s Defense and Special Defense by one stage.
+323,water-spout,gen-iii,water,special,150.0,100.0,5.0,0,,"Inflicts more damage when the user has more HP remaining, with a maximum of 150 power."
+324,signal-beam,gen-iii,bug,special,75.0,100.0,15.0,0,10.0,Has a chance to confuse the target.
+325,shadow-punch,gen-iii,ghost,physical,60.0,,20.0,0,,Never misses.
+326,extrasensory,gen-iii,psychic,special,80.0,100.0,20.0,0,10.0,Has a chance to make the target flinch.
+327,sky-uppercut,gen-iii,fighting,physical,85.0,90.0,15.0,0,,Inflicts regular damage and can hit Bounce and Fly users.
+328,sand-tomb,gen-iii,ground,physical,35.0,85.0,15.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+329,sheer-cold,gen-iii,ice,special,,30.0,5.0,0,,Causes a one-hit KO.
+330,muddy-water,gen-iii,water,special,90.0,85.0,10.0,0,30.0,Has a chance to lower the target’s accuracy by one stage.
+331,bullet-seed,gen-iii,grass,physical,25.0,100.0,30.0,0,,Hits 2-5 times in one turn.
+332,aerial-ace,gen-iii,flying,physical,60.0,,20.0,0,,Never misses.
+333,icicle-spear,gen-iii,ice,physical,25.0,100.0,30.0,0,,Hits 2-5 times in one turn.
+334,iron-defense,gen-iii,steel,status,,,15.0,0,,Raises the user’s Defense by two stages.
+335,block,gen-iii,normal,status,,,5.0,0,,Prevents the target from leaving battle.
+336,howl,gen-iii,normal,status,,,40.0,0,,Raises the user’s Attack by one stage.
+337,dragon-claw,gen-iii,dragon,physical,80.0,100.0,15.0,0,,Inflicts regular damage with no additional effect.
+338,frenzy-plant,gen-iii,grass,special,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+339,bulk-up,gen-iii,fighting,status,,,20.0,0,,Raises the user’s Attack and Defense by one stage.
+340,bounce,gen-iii,flying,physical,85.0,85.0,5.0,0,30.0,"User bounces high into the air, dodging all attacks, and hits next turn."
+341,mud-shot,gen-iii,ground,special,55.0,95.0,15.0,0,100.0,Has a chance to lower the target’s Speed by one stage.
+342,poison-tail,gen-iii,poison,physical,50.0,100.0,25.0,0,10.0,Has an increased chance for a critical hit and a chance to poison the target.
+343,covet,gen-iii,normal,physical,60.0,100.0,25.0,0,,Takes the target’s item.
+344,volt-tackle,gen-iii,electric,physical,120.0,100.0,15.0,0,10.0,User takes 1/3 the damage inflicted in recoil.  Has a chance to paralyze the target.
+345,magical-leaf,gen-iii,grass,special,60.0,,20.0,0,,Never misses.
+346,water-sport,gen-iii,water,status,,,15.0,0,,Halves all Fire-type damage.
+347,calm-mind,gen-iii,psychic,status,,,20.0,0,,Raises the user’s Special Attack and Special Defense by one stage.
+348,leaf-blade,gen-iii,grass,physical,90.0,100.0,15.0,0,,Has an increased chance for a critical hit.
+349,dragon-dance,gen-iii,dragon,status,,,20.0,0,,Raises the user’s Attack and Speed by one stage.
+350,rock-blast,gen-iii,rock,physical,25.0,90.0,10.0,0,,Hits 2-5 times in one turn.
+351,shock-wave,gen-iii,electric,special,60.0,,20.0,0,,Never misses.
+352,water-pulse,gen-iii,water,special,60.0,100.0,20.0,0,20.0,Has a chance to confuse the target.
+353,doom-desire,gen-iii,steel,special,140.0,100.0,5.0,0,,Hits the target two turns later.
+354,psycho-boost,gen-iii,psychic,special,140.0,90.0,5.0,0,100.0,Lowers the user’s Special Attack by two stages after inflicting damage.
+355,roost,gen-iv,flying,status,,,5.0,0,,Heals the user by half its max HP.
+356,gravity,gen-iv,psychic,status,,,5.0,0,,Disables moves and immunities that involve flying or levitating for five turns.
+357,miracle-eye,gen-iv,psychic,status,,,40.0,0,,"Forces the target to have no evasion, and allows it to be hit by Psychic moves even if it’s Dark."
+358,wake-up-slap,gen-iv,fighting,physical,70.0,100.0,10.0,0,,"If the target is asleep, has double power and wakes it up."
+359,hammer-arm,gen-iv,fighting,physical,100.0,90.0,10.0,0,100.0,Lowers user’s Speed by one stage.
+360,gyro-ball,gen-iv,steel,physical,,100.0,5.0,0,,"Power raises when the user has lower Speed, up to a maximum of 150."
+361,healing-wish,gen-iv,psychic,status,,,10.0,0,,User faints.  Its replacement has its HP fully restored and any major status effect removed.
+362,brine,gen-iv,water,special,65.0,100.0,10.0,0,,Has double power against Pokémon that have less than half their max HP remaining.
+363,natural-gift,gen-iv,normal,physical,,100.0,15.0,0,,Power and type depend on the held berry.
+364,feint,gen-iv,normal,physical,30.0,100.0,10.0,2,,Hits through Protect and Detect.
+365,pluck,gen-iv,flying,physical,60.0,100.0,20.0,0,,"If target has a berry, inflicts double damage and uses the berry."
+366,tailwind,gen-iv,flying,status,,,15.0,0,,"For three turns, friendly Pokémon have doubled Speed."
+367,acupressure,gen-iv,normal,status,,,30.0,0,,Raises one of a friendly Pokémon’s stats at random by two stages.
+368,metal-burst,gen-iv,steel,physical,,100.0,10.0,0,,Strikes back at the last Pokémon to hit the user this turn with 1.5× the damage.
+369,u-turn,gen-iv,bug,physical,70.0,100.0,20.0,0,,User must switch out after attacking.
+370,close-combat,gen-iv,fighting,physical,120.0,100.0,5.0,0,100.0,Lowers the user’s Defense and Special Defense by one stage after inflicting damage.
+371,payback,gen-iv,dark,physical,50.0,100.0,10.0,0,,Power is doubled if the target has already moved this turn.
+372,assurance,gen-iv,dark,physical,60.0,100.0,10.0,0,,Power is doubled if the target has already received damage this turn.
+373,embargo,gen-iv,dark,status,,100.0,15.0,0,,Target cannot use held items.
+374,fling,gen-iv,dark,physical,,100.0,10.0,0,,Throws held item at the target; power depends on the item.
+375,psycho-shift,gen-iv,psychic,status,,100.0,10.0,0,,Transfers the user’s major status effect to the target.
+376,trump-card,gen-iv,normal,special,,,5.0,0,,"Power increases when this move has less PP, up to a maximum of 200."
+377,heal-block,gen-iv,psychic,status,,100.0,15.0,0,,Prevents target from restoring its HP for five turns.
+378,wring-out,gen-iv,normal,special,,100.0,5.0,0,,"Power increases against targets with more HP remaining, up to a maximum of 121 power."
+379,power-trick,gen-iv,psychic,status,,,10.0,0,,User swaps Attack and Defense.
+380,gastro-acid,gen-iv,poison,status,,100.0,10.0,0,,Nullifies target’s ability until it leaves battle.
+381,lucky-chant,gen-iv,normal,status,,,30.0,0,,Prevents the target from scoring critical hits for five turns.
+382,me-first,gen-iv,normal,status,,,20.0,0,,"Uses the target’s move against it before it attacks, with power increased by half."
+383,copycat,gen-iv,normal,status,,,20.0,0,,Uses the target’s last used move.
+384,power-swap,gen-iv,psychic,status,,,10.0,0,,User swaps Attack and Special Attack changes with the target.
+385,guard-swap,gen-iv,psychic,status,,,10.0,0,,User swaps Defense and Special Defense changes with the target.
+386,punishment,gen-iv,dark,physical,,100.0,5.0,0,,"Power increases against targets with more raised stats, up to a maximum of 200."
+387,last-resort,gen-iv,normal,physical,140.0,100.0,5.0,0,,Can only be used after all of the user’s other moves have been used.
+388,worry-seed,gen-iv,grass,status,,100.0,10.0,0,,Changes the target’s ability to Insomnia.
+389,sucker-punch,gen-iv,dark,physical,70.0,100.0,5.0,1,,Only works if the target is about to use a damaging move.
+390,toxic-spikes,gen-iv,poison,status,,,20.0,0,,"Scatters poisoned spikes, poisoning opposing Pokémon that switch in."
+391,heart-swap,gen-iv,psychic,status,,,10.0,0,,User and target swap stat changes.
+392,aqua-ring,gen-iv,water,status,,,20.0,0,,Restores 1/16 of the user’s max HP each turn.
+393,magnet-rise,gen-iv,electric,status,,,10.0,0,,User is immune to Ground moves and effects for five turns.
+394,flare-blitz,gen-iv,fire,physical,120.0,100.0,15.0,0,10.0,User takes 1/3 the damage inflicted in recoil.  Has a chance to burn the target.
+395,force-palm,gen-iv,fighting,physical,60.0,100.0,10.0,0,30.0,Has a chance to paralyze the target.
+396,aura-sphere,gen-iv,fighting,special,80.0,,20.0,0,,Never misses.
+397,rock-polish,gen-iv,rock,status,,,20.0,0,,Raises the user’s Speed by two stages.
+398,poison-jab,gen-iv,poison,physical,80.0,100.0,20.0,0,30.0,Has a chance to poison the target.
+399,dark-pulse,gen-iv,dark,special,80.0,100.0,15.0,0,20.0,Has a chance to make the target flinch.
+400,night-slash,gen-iv,dark,physical,70.0,100.0,15.0,0,,Has an increased chance for a critical hit.
+401,aqua-tail,gen-iv,water,physical,90.0,90.0,10.0,0,,Inflicts regular damage with no additional effect.
+402,seed-bomb,gen-iv,grass,physical,80.0,100.0,15.0,0,,Inflicts regular damage with no additional effect.
+403,air-slash,gen-iv,flying,special,75.0,95.0,15.0,0,30.0,Has a chance to make the target flinch.
+404,x-scissor,gen-iv,bug,physical,80.0,100.0,15.0,0,,Inflicts regular damage with no additional effect.
+405,bug-buzz,gen-iv,bug,special,90.0,100.0,10.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+406,dragon-pulse,gen-iv,dragon,special,85.0,100.0,10.0,0,,Inflicts regular damage with no additional effect.
+407,dragon-rush,gen-iv,dragon,physical,100.0,75.0,10.0,0,20.0,Has a chance to make the target flinch.
+408,power-gem,gen-iv,rock,special,80.0,100.0,20.0,0,,Inflicts regular damage with no additional effect.
+409,drain-punch,gen-iv,fighting,physical,75.0,100.0,10.0,0,,Drains half the damage inflicted to heal the user.
+410,vacuum-wave,gen-iv,fighting,special,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+411,focus-blast,gen-iv,fighting,special,120.0,70.0,5.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+412,energy-ball,gen-iv,grass,special,90.0,100.0,10.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+413,brave-bird,gen-iv,flying,physical,120.0,100.0,15.0,0,,User receives 1/3 the damage inflicted in recoil.
+414,earth-power,gen-iv,ground,special,90.0,100.0,10.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+415,switcheroo,gen-iv,dark,status,,100.0,10.0,0,,User and target swap items.
+416,giga-impact,gen-iv,normal,physical,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+417,nasty-plot,gen-iv,dark,status,,,20.0,0,,Raises the user’s Special Attack by two stages.
+418,bullet-punch,gen-iv,steel,physical,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+419,avalanche,gen-iv,ice,physical,60.0,100.0,10.0,-4,,Inflicts double damage if the user takes damage before attacking this turn.
+420,ice-shard,gen-iv,ice,physical,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+421,shadow-claw,gen-iv,ghost,physical,70.0,100.0,15.0,0,,Has an increased chance for a critical hit.
+422,thunder-fang,gen-iv,electric,physical,65.0,95.0,15.0,0,10.0,Has a chance to paralyze the target and a chance to make the target flinch.
+423,ice-fang,gen-iv,ice,physical,65.0,95.0,15.0,0,10.0,Has a chance to freeze the target and a chance to make the target flinch.
+424,fire-fang,gen-iv,fire,physical,65.0,95.0,15.0,0,10.0,Has a chance to burn the target and a chance to make the target flinch.
+425,shadow-sneak,gen-iv,ghost,physical,40.0,100.0,30.0,1,,Inflicts regular damage with no additional effect.
+426,mud-bomb,gen-iv,ground,special,65.0,85.0,10.0,0,30.0,Has a chance to lower the target’s accuracy by one stage.
+427,psycho-cut,gen-iv,psychic,physical,70.0,100.0,20.0,0,,Has an increased chance for a critical hit.
+428,zen-headbutt,gen-iv,psychic,physical,80.0,90.0,15.0,0,20.0,Has a chance to make the target flinch.
+429,mirror-shot,gen-iv,steel,special,65.0,85.0,10.0,0,30.0,Has a chance to lower the target’s accuracy by one stage.
+430,flash-cannon,gen-iv,steel,special,80.0,100.0,10.0,0,10.0,Has a chance to lower the target’s Special Defense by one stage.
+431,rock-climb,gen-iv,normal,physical,90.0,85.0,20.0,0,20.0,Has a chance to confuse the target.
+432,defog,gen-iv,flying,status,,,15.0,0,,Lowers the target’s evasion by one stage.  Removes field effects from the enemy field.
+433,trick-room,gen-iv,psychic,status,,,5.0,-7,,"For five turns, slower Pokémon will act before faster Pokémon."
+434,draco-meteor,gen-iv,dragon,special,130.0,90.0,5.0,0,100.0,Lowers the user’s Special Attack by two stages after inflicting damage.
+435,discharge,gen-iv,electric,special,80.0,100.0,15.0,0,30.0,Has a chance to paralyze the target.
+436,lava-plume,gen-iv,fire,special,80.0,100.0,15.0,0,30.0,Has a chance to burn the target.
+437,leaf-storm,gen-iv,grass,special,130.0,90.0,5.0,0,100.0,Lowers the user’s Special Attack by two stages after inflicting damage.
+438,power-whip,gen-iv,grass,physical,120.0,85.0,10.0,0,,Inflicts regular damage with no additional effect.
+439,rock-wrecker,gen-iv,rock,physical,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+440,cross-poison,gen-iv,poison,physical,70.0,100.0,20.0,0,10.0,Has an increased chance for a critical hit and a chance to poison the target.
+441,gunk-shot,gen-iv,poison,physical,120.0,80.0,5.0,0,30.0,Has a chance to poison the target.
+442,iron-head,gen-iv,steel,physical,80.0,100.0,15.0,0,30.0,Has a chance to make the target flinch.
+443,magnet-bomb,gen-iv,steel,physical,60.0,,20.0,0,,Never misses.
+444,stone-edge,gen-iv,rock,physical,100.0,80.0,5.0,0,,Has an increased chance for a critical hit.
+445,captivate,gen-iv,normal,status,,100.0,20.0,0,,Lowers the target’s Special Attack by two stages if it’s the opposite gender.
+446,stealth-rock,gen-iv,rock,status,,,20.0,0,,Causes damage when opposing Pokémon switch in.
+447,grass-knot,gen-iv,grass,special,,100.0,20.0,0,,"Inflicts more damage to heavier targets, with a maximum of 120 power."
+448,chatter,gen-iv,flying,special,65.0,100.0,20.0,0,100.0,Has a higher chance to confuse the target when the recorded sound is louder.
+449,judgment,gen-iv,normal,special,100.0,100.0,10.0,0,,"If the user is holding a appropriate plate or drive, the damage inflicted will match it."
+450,bug-bite,gen-iv,bug,physical,60.0,100.0,20.0,0,,"If target has a berry, inflicts double damage and uses the berry."
+451,charge-beam,gen-iv,electric,special,50.0,90.0,10.0,0,70.0,Has a chance to raise the user’s Special Attack by one stage.
+452,wood-hammer,gen-iv,grass,physical,120.0,100.0,15.0,0,,User receives 1/3 the damage inflicted in recoil.
+453,aqua-jet,gen-iv,water,physical,40.0,100.0,20.0,1,,Inflicts regular damage with no additional effect.
+454,attack-order,gen-iv,bug,physical,90.0,100.0,15.0,0,,Has an increased chance for a critical hit.
+455,defend-order,gen-iv,bug,status,,,10.0,0,,Raises the user’s Defense and Special Defense by one stage.
+456,heal-order,gen-iv,bug,status,,,10.0,0,,Heals the user by half its max HP.
+457,head-smash,gen-iv,rock,physical,150.0,80.0,5.0,0,,User receives 1/2 the damage inflicted in recoil.
+458,double-hit,gen-iv,normal,physical,35.0,90.0,10.0,0,,Hits twice in one turn.
+459,roar-of-time,gen-iv,dragon,special,150.0,90.0,5.0,0,,User foregoes its next turn to recharge.
+460,spacial-rend,gen-iv,dragon,special,100.0,95.0,5.0,0,,Has an increased chance for a critical hit.
+461,lunar-dance,gen-iv,psychic,status,,,10.0,0,,"User faints, and its replacement is fully healed."
+462,crush-grip,gen-iv,normal,physical,,100.0,5.0,0,,"Power increases against targets with more HP remaining, up to a maximum of 121 power."
+463,magma-storm,gen-iv,fire,special,100.0,75.0,5.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+464,dark-void,gen-iv,dark,status,,50.0,10.0,0,,Puts the target to sleep.
+465,seed-flare,gen-iv,grass,special,120.0,85.0,5.0,0,40.0,Has a chance to lower the target’s Special Defense by two stages.
+466,ominous-wind,gen-iv,ghost,special,60.0,100.0,5.0,0,10.0,Has a chance to raise all of the user’s stats by one stage.
+467,shadow-force,gen-iv,ghost,physical,120.0,100.0,5.0,0,,"User vanishes, dodging all attacks, and hits next turn.  Hits through Protect and Detect."
+468,hone-claws,gen-v,dark,status,,,15.0,0,,Raises the user’s Attack and accuracy by one stage.
+469,wide-guard,gen-v,rock,status,,,10.0,3,,Prevents any multi-target moves from hitting friendly Pokémon this turn.
+470,guard-split,gen-v,psychic,status,,,10.0,0,,Averages Defense and Special Defense with the target.
+471,power-split,gen-v,psychic,status,,,10.0,0,,Averages Attack and Special Attack with the target.
+472,wonder-room,gen-v,psychic,status,,,10.0,0,,All Pokémon’s Defense and Special Defense are swapped for 5 turns.
+473,psyshock,gen-v,psychic,special,80.0,100.0,10.0,0,,"Inflicts damage based on the target’s Defense, not Special Defense."
+474,venoshock,gen-v,poison,special,65.0,100.0,10.0,0,,Inflicts double damage if the target is Poisoned.
+475,autotomize,gen-v,steel,status,,,15.0,0,,Raises the user’s Speed by two stages and halves the user’s weight.
+476,rage-powder,gen-v,bug,status,,,20.0,2,,Redirects the target’s single-target effects to the user for this turn.
+477,telekinesis,gen-v,psychic,status,,,15.0,0,,Moves have 100% accuracy against the target for three turns.
+478,magic-room,gen-v,psychic,status,,,10.0,0,,Negates held items for five turns.
+479,smack-down,gen-v,rock,physical,50.0,100.0,15.0,0,100.0,Removes any immunity to Ground damage.
+480,storm-throw,gen-v,fighting,physical,60.0,100.0,10.0,0,,Always scores a critical hit.
+481,flame-burst,gen-v,fire,special,70.0,100.0,15.0,0,,Deals splash damage to Pokémon next to the target.
+482,sludge-wave,gen-v,poison,special,95.0,100.0,10.0,0,10.0,Has a chance to poison the target.
+483,quiver-dance,gen-v,bug,status,,,20.0,0,,"Raises the user’s Special Attack, Special Defense, and Speed by one stage each."
+484,heavy-slam,gen-v,steel,physical,,100.0,10.0,0,,"Power is higher when the user weighs more than the target, up to a maximum of 120."
+485,synchronoise,gen-v,psychic,special,120.0,100.0,10.0,0,,Hits any Pokémon that shares a type with the user.
+486,electro-ball,gen-v,electric,special,,100.0,10.0,0,,"Power is higher when the user has greater Speed than the target, up to a maximum of 150."
+487,soak,gen-v,water,status,,100.0,20.0,0,,Changes the target’s type to Water.
+488,flame-charge,gen-v,fire,physical,50.0,100.0,20.0,0,100.0,Inflicts regular damage.  Raises the user’s Speed by one stage.
+489,coil,gen-v,poison,status,,,20.0,0,,"Raises the user’s Attack, Defense, and accuracy by one stage each."
+490,low-sweep,gen-v,fighting,physical,65.0,100.0,20.0,0,100.0,Lowers the target’s Speed by one stage.
+491,acid-spray,gen-v,poison,special,40.0,100.0,20.0,0,100.0,Lowers the target’s Special Defense by two stages.
+492,foul-play,gen-v,dark,physical,95.0,100.0,15.0,0,,Calculates damage with the target’s attacking stat.
+493,simple-beam,gen-v,normal,status,,100.0,15.0,0,,Changes the target’s ability to Simple.
+494,entrainment,gen-v,normal,status,,100.0,15.0,0,,Copies the user’s ability onto the target.
+495,after-you,gen-v,normal,status,,,15.0,0,,Makes the target act next this turn.
+496,round,gen-v,normal,special,60.0,100.0,15.0,0,,Has double power if it’s used more than once per turn.
+497,echoed-voice,gen-v,normal,special,40.0,100.0,15.0,0,,"Power increases by 100% for each consecutive use by any friendly Pokémon, to a maximum of 200."
+498,chip-away,gen-v,normal,physical,70.0,100.0,20.0,0,,Ignores the target’s stat modifiers.
+499,clear-smog,gen-v,poison,special,50.0,,15.0,0,,Removes all of the target’s stat modifiers.
+500,stored-power,gen-v,psychic,special,20.0,100.0,10.0,0,,"Power is higher the more the user’s stats have been raised, to a maximum of 31×."
+501,quick-guard,gen-v,fighting,status,,,15.0,3,,Prevents any priority moves from hitting friendly Pokémon this turn.
+502,ally-switch,gen-v,psychic,status,,,15.0,2,,User switches places with the friendly Pokémon opposite it.
+503,scald,gen-v,water,special,80.0,100.0,15.0,0,30.0,Has a chance to burn the target.
+504,shell-smash,gen-v,normal,status,,,15.0,0,,"Raises user’s Attack, Special Attack, and Speed by two stages.  Lower user’s Defense and Special Defense by one stage."
+505,heal-pulse,gen-v,psychic,status,,,10.0,0,,Heals the target for half its max HP.
+506,hex,gen-v,ghost,special,65.0,100.0,10.0,0,,Has double power if the target has a major status ailment.
+507,sky-drop,gen-v,flying,physical,60.0,100.0,10.0,0,,"Carries the target high into the air, dodging all attacks against either, and drops it next turn."
+508,shift-gear,gen-v,steel,status,,,10.0,0,,Raises the user’s Attack by one stage and its Speed by two stages.
+509,circle-throw,gen-v,fighting,physical,60.0,90.0,10.0,-6,,Ends wild battles.  Forces trainers to switch Pokémon.
+510,incinerate,gen-v,fire,special,60.0,100.0,15.0,0,,Destroys the target’s held berry.
+511,quash,gen-v,dark,status,,100.0,15.0,0,,Makes the target act last this turn.
+512,acrobatics,gen-v,flying,physical,55.0,100.0,15.0,0,,Has double power if the user has no held item.
+513,reflect-type,gen-v,normal,status,,,15.0,0,,User becomes the target’s type.
+514,retaliate,gen-v,normal,physical,70.0,100.0,5.0,0,,Has double power if a friendly Pokémon fainted last turn.
+515,final-gambit,gen-v,fighting,special,,100.0,5.0,0,,Inflicts damage equal to the user’s remaining HP.  User faints.
+516,bestow,gen-v,normal,status,,,15.0,0,,Gives the user’s held item to the target.
+517,inferno,gen-v,fire,special,100.0,50.0,5.0,0,100.0,Has a chance to burn the target.
+518,water-pledge,gen-v,water,special,80.0,100.0,10.0,0,,"With Grass Pledge, halves opposing Pokémon’s Speed for four turns."
+519,fire-pledge,gen-v,fire,special,80.0,100.0,10.0,0,,"With Water Pledge, doubles the effect chance of friendly Pokémon’s moves for four turns."
+520,grass-pledge,gen-v,grass,special,80.0,100.0,10.0,0,,"With Fire Pledge, damages opposing Pokémon for 1/8 their max HP every turn for four turns."
+521,volt-switch,gen-v,electric,special,70.0,100.0,20.0,0,,User must switch out after attacking.
+522,struggle-bug,gen-v,bug,special,50.0,100.0,20.0,0,100.0,Has a chance to lower the target’s Special Attack by one stage.
+523,bulldoze,gen-v,ground,physical,60.0,100.0,20.0,0,100.0,Has a chance to lower the target’s Speed by one stage.
+524,frost-breath,gen-v,ice,special,60.0,90.0,10.0,0,100.0,Always scores a critical hit.
+525,dragon-tail,gen-v,dragon,physical,60.0,90.0,10.0,-6,,Ends wild battles.  Forces trainers to switch Pokémon.
+526,work-up,gen-v,normal,status,,,30.0,0,,Raises the user’s Attack and Special Attack by one stage each.
+527,electroweb,gen-v,electric,special,55.0,95.0,15.0,0,100.0,Lowers the target’s Speed by one stage.
+528,wild-charge,gen-v,electric,physical,90.0,100.0,15.0,0,,User receives 1/4 the damage it inflicts in recoil.
+529,drill-run,gen-v,ground,physical,80.0,95.0,10.0,0,,Has an increased chance for a critical hit.
+530,dual-chop,gen-v,dragon,physical,40.0,90.0,15.0,0,,Hits twice in one turn.
+531,heart-stamp,gen-v,psychic,physical,60.0,100.0,25.0,0,30.0,Has a chance to make the target flinch.
+532,horn-leech,gen-v,grass,physical,75.0,100.0,10.0,0,,Drains half the damage inflicted to heal the user.
+533,sacred-sword,gen-v,fighting,physical,90.0,100.0,15.0,0,,Ignores the target’s stat modifiers.
+534,razor-shell,gen-v,water,physical,75.0,95.0,10.0,0,50.0,Has a chance to lower the target’s Defense by one stage.
+535,heat-crash,gen-v,fire,physical,,100.0,10.0,0,,"Power is higher when the user weighs more than the target, up to a maximum of 120."
+536,leaf-tornado,gen-v,grass,special,65.0,90.0,10.0,0,50.0,Has a chance to lower the target’s accuracy by one stage.
+537,steamroller,gen-v,bug,physical,65.0,100.0,20.0,0,30.0,Has a chance to make the target flinch.
+538,cotton-guard,gen-v,grass,status,,,10.0,0,,Raises the user’s Defense by three stages.
+539,night-daze,gen-v,dark,special,85.0,95.0,10.0,0,40.0,Has a chance to lower the target’s accuracy by one stage.
+540,psystrike,gen-v,psychic,special,100.0,100.0,10.0,0,,"Inflicts damage based on the target’s Defense, not Special Defense."
+541,tail-slap,gen-v,normal,physical,25.0,85.0,10.0,0,,Hits 2-5 times in one turn.
+542,hurricane,gen-v,flying,special,110.0,70.0,10.0,0,30.0,Has a chance to confuse the target.
+543,head-charge,gen-v,normal,physical,120.0,100.0,15.0,0,,User receives 1/4 the damage it inflicts in recoil.
+544,gear-grind,gen-v,steel,physical,50.0,85.0,15.0,0,,Hits twice in one turn.
+545,searing-shot,gen-v,fire,special,100.0,100.0,5.0,0,30.0,Has a chance to burn the target.
+546,techno-blast,gen-v,normal,special,120.0,100.0,5.0,0,,"If the user is holding a appropriate plate or drive, the damage inflicted will match it."
+547,relic-song,gen-v,normal,special,75.0,100.0,10.0,0,10.0,Has a chance to put the target to sleep.
+548,secret-sword,gen-v,fighting,special,85.0,100.0,10.0,0,,"Inflicts damage based on the target’s Defense, not Special Defense."
+549,glaciate,gen-v,ice,special,65.0,95.0,10.0,0,100.0,Lowers the target’s Speed by one stage.
+550,bolt-strike,gen-v,electric,physical,130.0,85.0,5.0,0,20.0,Has a chance to paralyze the target.
+551,blue-flare,gen-v,fire,special,130.0,85.0,5.0,0,20.0,Has a chance to burn the target.
+552,fiery-dance,gen-v,fire,special,80.0,100.0,10.0,0,50.0,Has a chance to raise the user’s Special Attack by one stage.
+553,freeze-shock,gen-v,ice,physical,140.0,90.0,5.0,0,30.0,Requires a turn to charge before attacking.  Has a chance to paralyze the target.
+554,ice-burn,gen-v,ice,special,140.0,90.0,5.0,0,30.0,Requires a turn to charge before attacking.  Has a chance to burn the target.
+555,snarl,gen-v,dark,special,55.0,95.0,15.0,0,100.0,Has a chance to lower the target’s Special Attack by one stage.
+556,icicle-crash,gen-v,ice,physical,85.0,90.0,10.0,0,30.0,Has a chance to make the target flinch.
+557,v-create,gen-v,fire,physical,180.0,95.0,5.0,0,100.0,"Lowers the user’s Defense, Special Defense, and Speed by one stage each."
+558,fusion-flare,gen-v,fire,special,100.0,100.0,5.0,0,,"With Fusion Bolt, inflicts double damage."
+559,fusion-bolt,gen-v,electric,physical,100.0,100.0,5.0,0,,"With Fusion Flare, inflicts double damage."
+560,flying-press,gen-vi,fighting,physical,100.0,95.0,10.0,0,,Deals both Fighting and Flying-type damage.
+561,mat-block,gen-vi,fighting,status,,,10.0,0,,Protects all friendly Pokémon from damaging moves.  Only works on the first turn after the user is sent out.
+562,belch,gen-vi,poison,special,120.0,90.0,10.0,0,,Can only be used after the user has eaten a berry.
+563,rototiller,gen-vi,ground,status,,,10.0,0,100.0,Raises the Attack and Special Attack of all Grass Pokémon in battle.
+564,sticky-web,gen-vi,bug,status,,,20.0,0,,"Covers the opposing field, lowering opponents’ Speed by one stage upon switching in."
+565,fell-stinger,gen-vi,bug,physical,50.0,100.0,25.0,0,,Raises the user’s Attack by two stages if it KOs the target.
+566,phantom-force,gen-vi,ghost,physical,90.0,100.0,10.0,0,,"User vanishes, dodging all attacks, and hits next turn.  Hits through Protect and Detect."
+567,trick-or-treat,gen-vi,ghost,status,,100.0,20.0,0,,Adds Ghost to the target’s types.
+568,noble-roar,gen-vi,normal,status,,100.0,30.0,0,100.0,Lowers the target’s Attack and Special Attack by one stage.
+569,ion-deluge,gen-vi,electric,status,,,25.0,1,,Changes all Normal moves to Electric moves for the rest of the turn.
+570,parabolic-charge,gen-vi,electric,special,65.0,100.0,20.0,0,,Heals the user for half the total damage dealt to all targets.
+571,forests-curse,gen-vi,grass,status,,100.0,20.0,0,,Adds Grass to the target’s types.
+572,petal-blizzard,gen-vi,grass,physical,90.0,100.0,15.0,0,,Inflicts regular damage.
+573,freeze-dry,gen-vi,ice,special,70.0,100.0,20.0,0,10.0,Super-effective against Water.
+574,disarming-voice,gen-vi,fairy,special,40.0,,15.0,0,,Never misses.
+575,parting-shot,gen-vi,dark,status,,100.0,20.0,0,100.0,Lowers all targets’ Attack and Special Attack by one stage.  Makes the user switch out.
+576,topsy-turvy,gen-vi,dark,status,,,20.0,0,,Inverts the target’s stat modifiers.
+577,draining-kiss,gen-vi,fairy,special,50.0,100.0,10.0,0,,Drains 75% of the damage inflicted to heal the user.
+578,crafty-shield,gen-vi,fairy,status,,,10.0,3,,Protects all friendly Pokémon from non-damaging moves.
+579,flower-shield,gen-vi,fairy,status,,,10.0,0,100.0,Raises the Defense of all Grass Pokémon in battle.
+580,grassy-terrain,gen-vi,grass,status,,,10.0,0,,"For five turns, heals all Pokémon on the ground for 1/16 max HP each turn and strengthens their Grass moves to 1.5× their power."
+581,misty-terrain,gen-vi,fairy,status,,,10.0,0,,"For five turns, protects all Pokémon on the ground from major status ailments and confusion, and halves the power of incoming Dragon moves."
+582,electrify,gen-vi,electric,status,,,20.0,0,,Changes the target’s move’s type to Electric if it hasn’t moved yet this turn.
+583,play-rough,gen-vi,fairy,physical,90.0,90.0,10.0,0,10.0,Has a chance to lower the target’s Attack by one stage.
+584,fairy-wind,gen-vi,fairy,special,40.0,100.0,30.0,0,,Inflicts regular damage with no additional effect.
+585,moonblast,gen-vi,fairy,special,95.0,100.0,15.0,0,30.0,Has a chance to lower the target’s Special Attack by one stage.
+586,boomburst,gen-vi,normal,special,140.0,100.0,10.0,0,,Inflicts regular damage.
+587,fairy-lock,gen-vi,fairy,status,,,10.0,0,,Prevents all Pokémon from fleeing or switching out during the next turn.
+588,kings-shield,gen-vi,steel,status,,,10.0,4,,Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+589,play-nice,gen-vi,normal,status,,,20.0,0,100.0,Lowers the target’s Attack by one stage.
+590,confide,gen-vi,normal,status,,,20.0,0,100.0,Lowers the target’s Special Attack by one stage.
+591,diamond-storm,gen-vi,rock,physical,100.0,95.0,5.0,0,50.0,Has a chance to raise the user’s Defense by two stages for each target hit.
+592,steam-eruption,gen-vi,water,special,110.0,95.0,5.0,0,30.0,Has a chance to burn the target.
+593,hyperspace-hole,gen-vi,psychic,special,80.0,,5.0,0,,Ignores and destroys protection effects.
+594,water-shuriken,gen-vi,water,special,15.0,100.0,20.0,1,,Hits 2–5 times.
+595,mystical-fire,gen-vi,fire,special,75.0,100.0,10.0,0,100.0,Has a chance to lower the target’s Special Attack by one stage.
+596,spiky-shield,gen-vi,grass,status,,,10.0,4,,Blocks damaging attacks and damages attacking Pokémon for 1/8 their max HP.
+597,aromatic-mist,gen-vi,fairy,status,,,20.0,0,,Raises a selected ally’s Special Defense by one stage.
+598,eerie-impulse,gen-vi,electric,status,,100.0,15.0,0,,Lowers the target’s Special Attack by two stages.
+599,venom-drench,gen-vi,poison,status,,100.0,20.0,0,100.0,"Lowers the target’s Attack, Special Attack, and Speed by one stage if it is poisoned."
+600,powder,gen-vi,bug,status,,100.0,20.0,1,,"Explodes if the target uses a Fire move this turn, damaging it for 1/4 its max HP and preventing the move."
+601,geomancy,gen-vi,fairy,status,,,10.0,0,,"Takes one turn to charge, then raises the user’s Special Attack, Special Defense, and Speed by two stages."
+602,magnetic-flux,gen-vi,electric,status,,,20.0,0,,Raises the Defense and Special Defense of all friendly Pokémon with Plus or Minus by one stage.
+603,happy-hour,gen-vi,normal,status,,,30.0,0,,Doubles prize money.
+604,electric-terrain,gen-vi,electric,status,,,10.0,0,,"For five turns, prevents all Pokémon on the ground from sleeping and strengthens their Electric moves to 1.5× their power."
+605,dazzling-gleam,gen-vi,fairy,special,80.0,100.0,10.0,0,,Inflicts regular damage with no additional effect.
+606,celebrate,gen-vi,normal,status,,,40.0,0,,Does nothing.
+607,hold-hands,gen-vi,normal,status,,,40.0,0,,Does nothing.
+608,baby-doll-eyes,gen-vi,fairy,status,,100.0,30.0,1,,Lowers the target’s Attack by one stage.
+609,nuzzle,gen-vi,electric,physical,20.0,100.0,20.0,0,100.0,Has a chance to paralyze the target.
+610,hold-back,gen-vi,normal,physical,40.0,100.0,40.0,0,,Cannot lower the target’s HP below 1.
+611,infestation,gen-vi,bug,special,20.0,100.0,20.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+612,power-up-punch,gen-vi,fighting,physical,40.0,100.0,20.0,0,100.0,Raises the user’s Attack by one stage after inflicting damage.
+613,oblivion-wing,gen-vi,flying,special,80.0,100.0,10.0,0,,Drains 75% of the damage inflicted to heal the user.
+614,thousand-arrows,gen-vi,ground,physical,90.0,100.0,10.0,0,100.0,"Grounds the target, and hits even Flying-type or levitating Pokémon."
+615,thousand-waves,gen-vi,ground,physical,90.0,100.0,10.0,0,,Prevents the target from leaving battle.
+616,lands-wrath,gen-vi,ground,physical,90.0,100.0,10.0,0,,Inflicts regular damage with no additional effect.
+617,light-of-ruin,gen-vi,fairy,special,140.0,90.0,5.0,0,,User receives 1/2 the damage inflicted in recoil.
+618,origin-pulse,gen-vi,water,special,110.0,85.0,10.0,0,,Inflicts regular damage with no additional effect.
+619,precipice-blades,gen-vi,ground,physical,120.0,85.0,10.0,0,,Inflicts regular damage with no additional effect.
+620,dragon-ascent,gen-vi,flying,physical,120.0,100.0,5.0,0,100.0,Lowers the user’s Defense and Special Defense by one stage after inflicting damage.
+621,hyperspace-fury,gen-vi,dark,physical,100.0,,5.0,0,100.0,Ignores and destroys protection effects.
+622,breakneck-blitz--physical,gen-vii,normal,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+623,breakneck-blitz--special,gen-vii,normal,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+624,all-out-pummeling--physical,gen-vii,fighting,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+625,all-out-pummeling--special,gen-vii,fighting,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+626,supersonic-skystrike--physical,gen-vii,flying,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+627,supersonic-skystrike--special,gen-vii,flying,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+628,acid-downpour--physical,gen-vii,poison,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+629,acid-downpour--special,gen-vii,poison,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+630,tectonic-rage--physical,gen-vii,ground,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+631,tectonic-rage--special,gen-vii,ground,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+632,continental-crush--physical,gen-vii,rock,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+633,continental-crush--special,gen-vii,rock,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+634,savage-spin-out--physical,gen-vii,bug,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+635,savage-spin-out--special,gen-vii,bug,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+636,never-ending-nightmare--physical,gen-vii,ghost,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+637,never-ending-nightmare--special,gen-vii,ghost,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+638,corkscrew-crash--physical,gen-vii,steel,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+639,corkscrew-crash--special,gen-vii,steel,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+640,inferno-overdrive--physical,gen-vii,fire,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+641,inferno-overdrive--special,gen-vii,fire,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+642,hydro-vortex--physical,gen-vii,water,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+643,hydro-vortex--special,gen-vii,water,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+644,bloom-doom--physical,gen-vii,grass,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+645,bloom-doom--special,gen-vii,grass,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+646,gigavolt-havoc--physical,gen-vii,electric,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+647,gigavolt-havoc--special,gen-vii,electric,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+648,shattered-psyche--physical,gen-vii,psychic,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+649,shattered-psyche--special,gen-vii,psychic,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+650,subzero-slammer--physical,gen-vii,ice,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+651,subzero-slammer--special,gen-vii,ice,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+652,devastating-drake--physical,gen-vii,dragon,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+653,devastating-drake--special,gen-vii,dragon,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+654,black-hole-eclipse--physical,gen-vii,dark,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+655,black-hole-eclipse--special,gen-vii,dark,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+656,twinkle-tackle--physical,gen-vii,fairy,physical,,,1.0,0,,Inflicts regular damage with no additional effect.
+657,twinkle-tackle--special,gen-vii,fairy,special,,,1.0,0,,Inflicts regular damage with no additional effect.
+658,catastropika,gen-vii,electric,physical,210.0,,1.0,0,,Inflicts regular damage with no additional effect.
+659,shore-up,gen-vii,ground,status,,,5.0,0,,"Heals the user for ½ its max HP, or ⅔ during a sandstorm."
+660,first-impression,gen-vii,bug,physical,90.0,100.0,10.0,2,,Can only be used as the first move after the user enters battle.
+661,baneful-bunker,gen-vii,poison,status,,,10.0,4,,Grants the user protection for the rest of the turn and poisons any Pokémon that tries to use a contact move on it.
+662,spirit-shackle,gen-vii,ghost,physical,80.0,100.0,10.0,0,,Traps the target.
+663,darkest-lariat,gen-vii,dark,physical,85.0,100.0,10.0,0,,Ignores the target’s stat modifiers.
+664,sparkling-aria,gen-vii,water,special,90.0,100.0,10.0,0,,Cures the target of burns.
+665,ice-hammer,gen-vii,ice,physical,100.0,90.0,10.0,0,100.0,Lowers user’s Speed by one stage.
+666,floral-healing,gen-vii,fairy,status,,,10.0,0,,"Heals the target for ½ its max HP, or ⅔ on Grassy Terrain."
+667,high-horsepower,gen-vii,ground,physical,95.0,95.0,10.0,0,,Inflicts regular damage with no additional effect.
+668,strength-sap,gen-vii,grass,status,,100.0,10.0,0,100.0,Heals the user by the target’s current Attack stat and lowers the target’s Attack by one stage.
+669,solar-blade,gen-vii,grass,physical,125.0,100.0,10.0,0,,Requires a turn to charge before attacking.
+670,leafage,gen-vii,grass,physical,40.0,100.0,40.0,0,,Inflicts regular damage with no additional effect.
+671,spotlight,gen-vii,normal,status,,,15.0,3,,Forces the target’s opponents to aim at the target for the rest of the turn.
+672,toxic-thread,gen-vii,poison,status,,100.0,20.0,0,100.0,Poisons the target and lowers its Speed by one stage.
+673,laser-focus,gen-vii,normal,status,,,30.0,0,,Guarantees a critical hit with the user’s next move.
+674,gear-up,gen-vii,steel,status,,,20.0,0,,Raises the Attack and Special Attack of all friendly Pokémon with Plus or Minus by one stage.
+675,throat-chop,gen-vii,dark,physical,80.0,100.0,15.0,0,100.0,Prevents the target from using sound-based moves for two turns.
+676,pollen-puff,gen-vii,bug,special,90.0,100.0,15.0,0,,"Damages opponents, but heals allies for 50% of their max HP."
+677,anchor-shot,gen-vii,steel,physical,80.0,100.0,20.0,0,,Traps the target.
+678,psychic-terrain,gen-vii,psychic,status,,,10.0,0,,Protects Pokémon on the ground from priority moves and increases the power of their  Psychic moves by 50%.
+679,lunge,gen-vii,bug,physical,80.0,100.0,15.0,0,100.0,Lowers the target’s Attack by one stage after inflicting damage.
+680,fire-lash,gen-vii,fire,physical,80.0,100.0,15.0,0,100.0,Lowers the target’s Defense by one stage after inflicting damage.
+681,power-trip,gen-vii,dark,physical,20.0,100.0,10.0,0,,"Power is higher the more the user’s stats have been raised, to a maximum of 31×."
+682,burn-up,gen-vii,fire,special,130.0,100.0,5.0,0,,Removes the user’s Fire type after inflicting damage.
+683,speed-swap,gen-vii,psychic,status,,,10.0,0,,Exchanges the user’s Speed with the target’s.
+684,smart-strike,gen-vii,steel,physical,70.0,,10.0,0,,Never misses.
+685,purify,gen-vii,poison,status,,,20.0,0,,Cures the target of a major status ailment and heals the user for 50% of its max HP.
+686,revelation-dance,gen-vii,normal,special,90.0,100.0,15.0,0,,Has the same type as the user.
+687,core-enforcer,gen-vii,dragon,special,100.0,100.0,10.0,0,,Nullifies the target’s ability if it moves earlier.
+688,trop-kick,gen-vii,grass,physical,70.0,100.0,15.0,0,100.0,Lowers the target’s Attack by one stage after inflicting damage.
+689,instruct,gen-vii,psychic,status,,,15.0,0,,Forces the target to repeat its last used move.
+690,beak-blast,gen-vii,flying,physical,100.0,100.0,15.0,-3,,Inflicts a burn on any Pokémon that makes contact before the attack.
+691,clanging-scales,gen-vii,dragon,special,110.0,100.0,5.0,0,100.0,Lowers the user’s Defense by one stage after inflicting damage.
+692,dragon-hammer,gen-vii,dragon,physical,90.0,100.0,15.0,0,,Inflicts regular damage with no additional effect.
+693,brutal-swing,gen-vii,dark,physical,60.0,100.0,20.0,0,,Inflicts regular damage with no additional effect.
+694,aurora-veil,gen-vii,ice,status,,,20.0,0,,"Reduces damage five turns, but must be used during hail."
+695,sinister-arrow-raid,gen-vii,ghost,physical,180.0,,1.0,0,,Inflicts regular damage with no additional effect.
+696,malicious-moonsault,gen-vii,dark,physical,180.0,,1.0,0,,Inflicts regular damage with no additional effect.
+697,oceanic-operetta,gen-vii,water,special,195.0,,1.0,0,,Inflicts regular damage with no additional effect.
+698,guardian-of-alola,gen-vii,fairy,special,,,1.0,0,,Damages the target for 75% of its remaining HP.
+699,soul-stealing-7-star-strike,gen-vii,ghost,physical,195.0,,1.0,0,,Inflicts regular damage with no additional effect.
+700,stoked-sparksurfer,gen-vii,electric,special,175.0,,1.0,0,100.0,Has a chance to paralyze the target.
+701,pulverizing-pancake,gen-vii,normal,physical,210.0,,1.0,0,,Inflicts regular damage with no additional effect.
+702,extreme-evoboost,gen-vii,normal,status,,,1.0,0,100.0,Raises all of the user’s stats by two stages.
+703,genesis-supernova,gen-vii,psychic,special,185.0,,1.0,0,,Changes the terrain to Psychic Terrain after inflicting damage.
+704,shell-trap,gen-vii,fire,special,150.0,100.0,5.0,-3,,Only inflicts damage if the user was hit by a physical move this turn.
+705,fleur-cannon,gen-vii,fairy,special,130.0,90.0,5.0,0,100.0,Lowers the user’s Special Attack by two stages after inflicting damage.
+706,psychic-fangs,gen-vii,psychic,physical,85.0,100.0,10.0,0,,Destroys Reflect and Light Screen.
+707,stomping-tantrum,gen-vii,ground,physical,75.0,100.0,10.0,0,,Has double power if the user’s last move failed.
+708,shadow-bone,gen-vii,ghost,physical,85.0,100.0,10.0,0,20.0,Has a chance to lower the target’s Defense by one stage.
+709,accelerock,gen-vii,rock,physical,40.0,100.0,20.0,1,,Inflicts regular damage with no additional effect.
+710,liquidation,gen-vii,water,physical,85.0,100.0,10.0,0,20.0,Has a chance to lower the target’s Defense by one stage.
+711,prismatic-laser,gen-vii,psychic,special,160.0,100.0,10.0,0,,User foregoes its next turn to recharge.
+712,spectral-thief,gen-vii,ghost,physical,90.0,100.0,10.0,0,,"Steals the target’s stat increases, then inflicts damage."
+713,sunsteel-strike,gen-vii,steel,physical,100.0,100.0,5.0,0,,Cannot be disrupted by abilities.
+714,moongeist-beam,gen-vii,ghost,special,100.0,100.0,5.0,0,,Cannot be disrupted by abilities.
+715,tearful-look,gen-vii,normal,status,,,20.0,0,100.0,Lowers the target’s Attack and Special Attack by one stage.
+716,zing-zap,gen-vii,electric,physical,80.0,100.0,10.0,0,30.0,Has a chance to make the target flinch.
+717,natures-madness,gen-vii,fairy,special,,90.0,10.0,0,,Inflicts damage equal to half the target’s HP.
+718,multi-attack,gen-vii,normal,physical,120.0,100.0,10.0,0,,"If the user is holding a appropriate plate or drive, the damage inflicted will match it."
+719,10-000-000-volt-thunderbolt,gen-vii,electric,special,195.0,,1.0,0,,Inflicts regular damage with no additional effect.
+720,mind-blown,gen-vii,fire,special,150.0,100.0,5.0,0,,"Inflicts damage, and the user takes damage equal to half of its max HP, rounded up."
+721,plasma-fists,gen-vii,electric,physical,100.0,100.0,15.0,0,,"After inflicting damage, causes all Normal-type moves to become Electric-type for the remainder of the turn."
+722,photon-geyser,gen-vii,psychic,special,100.0,100.0,5.0,0,,Inflicts regular damage with no additional effect.
+723,light-that-burns-the-sky,gen-vii,psychic,special,200.0,,1.0,0,,"Inflicts damage using either Attack or Special Attack stat, whichever is higher."
+724,searing-sunraze-smash,gen-vii,steel,physical,200.0,,1.0,0,,Cannot be disrupted by abilities.
+725,menacing-moonraze-maelstrom,gen-vii,ghost,special,200.0,,1.0,0,,Cannot be disrupted by abilities.
+726,lets-snuggle-forever,gen-vii,fairy,physical,190.0,,1.0,0,,Inflicts regular damage with no additional effect.
+727,splintered-stormshards,gen-vii,rock,physical,190.0,,1.0,0,,Inflicts damage and removes any terrain present on the battlefield.
+728,clangorous-soulblaze,gen-vii,dragon,special,185.0,,1.0,0,100.0,"Inflicts damage to all opposing Pokémon and increases the user’s Attack, Defense, Special Attack, Special Defense, and Speed by one stage each."
+729,zippy-zap,gen-vii,electric,physical,80.0,100.0,10.0,2,100.0,Inflicts regular damage with no additional effect.
+730,splishy-splash,gen-vii,water,special,90.0,100.0,15.0,0,30.0,Inflicts regular damage with no additional effect.
+731,floaty-fall,gen-vii,flying,physical,90.0,95.0,15.0,0,30.0,Inflicts regular damage with no additional effect.
+732,pika-papow,gen-vii,electric,special,,,20.0,0,,Inflicts regular damage with no additional effect.
+733,bouncy-bubble,gen-vii,water,special,60.0,100.0,20.0,0,,Inflicts regular damage with no additional effect.
+734,buzzy-buzz,gen-vii,electric,special,60.0,100.0,20.0,0,100.0,Inflicts regular damage with no additional effect.
+735,sizzly-slide,gen-vii,fire,physical,60.0,100.0,20.0,0,100.0,Inflicts regular damage with no additional effect.
+736,glitzy-glow,gen-vii,psychic,special,80.0,95.0,15.0,0,,Inflicts regular damage with no additional effect.
+737,baddy-bad,gen-vii,dark,special,80.0,95.0,15.0,0,,Inflicts regular damage with no additional effect.
+738,sappy-seed,gen-vii,grass,physical,100.0,90.0,10.0,0,100.0,Inflicts regular damage with no additional effect.
+739,freezy-frost,gen-vii,ice,special,100.0,90.0,10.0,0,,Inflicts regular damage with no additional effect.
+740,sparkly-swirl,gen-vii,fairy,special,120.0,85.0,5.0,0,,Inflicts regular damage with no additional effect.
+741,veevee-volley,gen-vii,normal,physical,,,20.0,0,,Inflicts regular damage with no additional effect.
+742,double-iron-bash,gen-vii,steel,physical,60.0,100.0,5.0,0,30.0,Hits twice in one turn.
+743,max-guard,gen-viii,normal,status,,,10.0,4,,Prevents any moves from hitting the user this turn.
+744,dynamax-cannon,gen-viii,dragon,special,100.0,100.0,5.0,0,100.0,Deals twice the damage if the target is Dynamaxed.
+745,snipe-shot,gen-viii,water,special,80.0,100.0,15.0,0,100.0,"The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target."
+746,jaw-lock,gen-viii,dark,physical,80.0,100.0,10.0,0,100.0,Prevents you and the target from switching out. 
+747,stuff-cheeks,gen-viii,normal,status,,,10.0,0,100.0,User consumes berry and raises its defense by 2 stages.
+748,no-retreat,gen-viii,fighting,status,,,5.0,0,100.0,Prevents user from switching out. Raises all of the user’s stats by one stage.
+749,tar-shot,gen-viii,rock,status,,100.0,15.0,0,100.0,"Lowers the target's Speed by 1 stage. Until the target switches out, the effectiveness of Fire-type moves is doubled against it."
+750,magic-powder,gen-viii,psychic,status,,100.0,20.0,0,100.0,Causes the target to become a Psychic type.
+751,dragon-darts,gen-viii,dragon,physical,50.0,100.0,10.0,0,100.0,"Hits twice in one turn. In Double Battles, this move will hit both enemy targets. If it would fail to hit one of the targets, the other target will be hit twice."
+752,teatime,gen-viii,normal,status,,,10.0,0,100.0,All Pokemon on the field consume their held berries.
+753,octolock,gen-viii,fighting,status,,100.0,15.0,0,100.0,"Prevents the target from switching out. At the end of each turn, the targets Defense and Special Defense are lowered by 1 stage."
+754,bolt-beak,gen-viii,electric,physical,85.0,100.0,10.0,0,100.0,Power doubles if the user moves before the target.
+755,fishious-rend,gen-viii,water,physical,85.0,100.0,10.0,0,100.0,Power doubles if the user moves before the target.
+756,court-change,gen-viii,normal,status,,100.0,10.0,0,100.0,Switches single sided field effects from the users side to the targets side and vice versa. 
+757,max-flare,gen-viii,fire,physical,100.0,,10.0,0,100.0,Changes the weather to sunny for five turns.
+758,max-flutterby,gen-viii,bug,physical,10.0,,10.0,0,100.0,"If this move hits, lower the Special Attack of all Pokemon on the opposing side by 1 stage."
+759,max-lightning,gen-viii,electric,physical,10.0,,10.0,0,100.0,"For five turns, prevents all Pokémon on the ground from sleeping and strengthens their Electric moves to 1.5× their power."
+760,max-strike,gen-viii,normal,physical,10.0,,10.0,0,100.0,"If this move hits, lower the Speed of all Pokemon on the opposing side by 1 stage."
+761,max-knuckle,gen-viii,fighting,physical,10.0,,10.0,0,100.0,"If this move hits, raise the Attack of the user and its allies' by 1 stage."
+762,max-phantasm,gen-viii,ghost,physical,10.0,,10.0,0,100.0,"If this move hits, lower the Defense of all Pokemon on the opposing side by 1 stage."
+763,max-hailstorm,gen-viii,ice,physical,10.0,,10.0,0,100.0,Changes the weather to a hailstorm for five turns.
+764,max-ooze,gen-viii,poison,physical,10.0,,10.0,0,100.0,"If this move hits, raise the Special Attack of the user and its allies' by 1 stage."
+765,max-geyser,gen-viii,water,physical,10.0,,10.0,0,100.0,Changes the weather to rain for five turns.
+766,max-airstream,gen-viii,flying,physical,10.0,,10.0,0,100.0,"If this move hits, raise the Speed of the user and its allies' by 1 stage."
+767,max-starfall,gen-viii,fairy,physical,10.0,,10.0,0,100.0,"For five turns, protects all Pokémon on the ground from major status ailments and confusion, and halves the power of incoming Dragon moves."
+768,max-wyrmwind,gen-viii,dragon,physical,10.0,,10.0,0,100.0,"If this move hits, lower the Attack of all Pokemon on the opposing side by 1 stage."
+769,max-mindstorm,gen-viii,psychic,physical,10.0,,10.0,0,100.0,Protects Pokémon on the ground from priority moves and increases the power of their  Psychic moves by 50%.
+770,max-rockfall,gen-viii,rock,physical,10.0,,10.0,0,100.0,Changes the weather to a sandstorm for five turns.
+771,max-quake,gen-viii,ground,physical,10.0,,10.0,0,100.0,"If this move hits, raise the Special Defense of the user and its allies' by 1 stage."
+772,max-darkness,gen-viii,dark,physical,10.0,,10.0,0,100.0,"If this move hits, lower the Special Defense of all Pokemon on the opposing side by 1 stage."
+773,max-overgrowth,gen-viii,grass,physical,10.0,,10.0,0,100.0,"For five turns, heals all Pokémon on the ground for 1/16 max HP each turn and strengthens their Grass moves to 1.5× their power."
+774,max-steelspike,gen-viii,steel,physical,10.0,,10.0,0,100.0,"If this move hits, raise the Defense of the user and its allies' by 1 stage."
+775,clangorous-soul,gen-viii,dragon,status,,100.0,5.0,0,100.0,User loses 33% of its Max HP. Raises all of the user’s stats by one stage.
+776,body-press,gen-viii,fighting,physical,80.0,100.0,10.0,0,,"Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. "
+777,decorate,gen-viii,fairy,status,,,15.0,0,100.0,Raise the targets Attack and Special Attack by 2 stages.
+778,drum-beating,gen-viii,grass,physical,80.0,100.0,10.0,0,100.0,Has a chance to lower the target’s Speed by one stage.
+779,snap-trap,gen-viii,grass,physical,35.0,100.0,15.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+780,pyro-ball,gen-viii,fire,physical,120.0,90.0,5.0,0,10.0,Has a chance to burn the target.
+781,behemoth-blade,gen-viii,steel,physical,100.0,100.0,5.0,0,100.0,Deals twice the damage if the target is Dynamaxed.
+782,behemoth-bash,gen-viii,steel,physical,100.0,100.0,5.0,0,100.0,Deals twice the damage if the target is Dynamaxed.
+783,aura-wheel,gen-viii,electric,physical,110.0,100.0,10.0,0,100.0,"Raises the user's Speed by 1 stage. In Full Belly Mode, this move is Electric type. In Hangry Mode, this move is Dark type."
+784,breaking-swipe,gen-viii,dragon,physical,60.0,100.0,15.0,0,100.0,Lowers the target’s Attack by one stage after inflicting damage.
+785,branch-poke,gen-viii,grass,physical,40.0,100.0,40.0,0,,Inflicts regular damage with no additional effect.
+786,overdrive,gen-viii,electric,special,80.0,100.0,10.0,0,,Inflicts regular damage with no additional effect.
+787,apple-acid,gen-viii,grass,special,80.0,100.0,10.0,0,100.0,Lower the targets Special Defense by 1 stage.
+788,grav-apple,gen-viii,grass,physical,80.0,100.0,10.0,0,100.0,Lower the targets Defense by 1 stage. Damage is increased by 50% during Gravitys effect.
+789,spirit-break,gen-viii,fairy,physical,75.0,100.0,15.0,0,100.0,Has a chance to lower the target’s Special Attack by one stage.
+790,strange-steam,gen-viii,fairy,special,90.0,95.0,10.0,0,20.0,Has a chance to confuse the target.
+791,life-dew,gen-viii,water,status,,,10.0,0,100.0,"Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up."
+792,obstruct,gen-viii,dark,status,,100.0,10.0,4,100.0,"Prevents any moves from hitting the user this turn. If this blocks a contact move, the user has their Defense lowered by 2 stages."
+793,false-surrender,gen-viii,dark,physical,80.0,,10.0,0,100.0,Never misses.
+794,meteor-assault,gen-viii,fighting,physical,150.0,100.0,5.0,0,100.0,User foregoes its next turn to recharge.
+795,eternabeam,gen-viii,dragon,special,160.0,90.0,5.0,0,100.0,User foregoes its next turn to recharge.
+796,steel-beam,gen-viii,steel,special,140.0,95.0,5.0,0,100.0,"Inflicts damage, and the user takes damage equal to half of its max HP, rounded up."
+797,expanding-force,gen-viii,psychic,special,80.0,100.0,10.0,0,100.0,"If Psychic Terrain is active and the user is grounded, this move hits all opposing Pokemon and has its power incrased by 50%."
+798,steel-roller,gen-viii,steel,physical,130.0,100.0,5.0,0,100.0,"Ends the effect of Electric, Grassy, Misty, or Psychic Terrains. Fails if no Terrain is active. "
+799,scale-shot,gen-viii,dragon,physical,25.0,90.0,20.0,0,100.0,Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+800,meteor-beam,gen-viii,rock,special,120.0,90.0,10.0,0,100.0,Requires a turn to charge before attacking. Raises the users Special Attack by 1 stage after the first turn.
+801,shell-side-arm,gen-viii,poison,special,90.0,100.0,10.0,0,20.0,"Has a chance to poison the target. This switches categories between physical and special, depending on which would deal more damage to the target."
+802,misty-explosion,gen-viii,fairy,special,100.0,100.0,5.0,0,100.0,"If Misty Terrain is active and the user is grounded, this move has its power increased by 50%."
+803,grassy-glide,gen-viii,grass,physical,55.0,100.0,20.0,0,100.0,"If Grassy Terrain is active and the user is grounded, this move has has its priority increased by 1."
+804,rising-voltage,gen-viii,electric,special,70.0,100.0,20.0,0,100.0,"If Electric Terrain is active and the user is grounded, this move has has its power doubled."
+805,terrain-pulse,gen-viii,normal,special,50.0,100.0,10.0,0,,"If any terrain is active and the user is grounded, this moves power is doubled and changes type to match that terrains type."
+806,skitter-smack,gen-viii,bug,physical,70.0,90.0,10.0,0,100.0,Lowers the target’s Special Attack by one stage.
+807,burning-jealousy,gen-viii,fire,special,70.0,100.0,5.0,0,100.0,Burns the target if it had a state stage raise this turn.
+808,lash-out,gen-viii,dark,physical,75.0,100.0,5.0,0,100.0,Power doubles if the user had a stat stage lowered this turn.
+809,poltergeist,gen-viii,ghost,physical,110.0,90.0,5.0,0,,Fails if the target has no held item.
+810,corrosive-gas,gen-viii,poison,status,,100.0,40.0,0,100.0,Target drops its held item.
+811,coaching,gen-viii,fighting,status,,,10.0,0,100.0,Raises the target's Attack and Defense by 1 stage. Fails if there is no ally adjacent to the user.
+812,flip-turn,gen-viii,water,physical,60.0,100.0,20.0,0,100.0,User must switch out after attacking.
+813,triple-axel,gen-viii,ice,physical,20.0,90.0,10.0,0,100.0,"Hits three times, increasing power by 100% with each successful hit."
+814,dual-wingbeat,gen-viii,flying,physical,40.0,90.0,10.0,0,100.0,Hits twice in one turn.
+815,scorching-sands,gen-viii,ground,special,70.0,100.0,10.0,0,30.0,Has a chance to burn the target.
+816,jungle-healing,gen-viii,grass,status,,,10.0,0,100.0,"Each Pokemon on the user's side has its status condition healed and restores 1/4 of its maximum HP, rounded up."
+817,wicked-blow,gen-viii,dark,physical,75.0,100.0,5.0,0,100.0,Always scores a critical hit.
+818,surging-strikes,gen-viii,water,physical,25.0,100.0,5.0,0,100.0,Hits three times. Always scores a critical hit.
+819,thunder-cage,gen-viii,electric,special,80.0,90.0,15.0,0,100.0,Prevents the target from fleeing and inflicts damage for 2-5 turns.
+820,dragon-energy,gen-viii,dragon,special,150.0,100.0,5.0,0,,"Inflicts more damage when the user has more HP remaining, with a maximum of 150 power."
+821,freezing-glare,gen-viii,psychic,special,90.0,100.0,10.0,0,10.0,Has a chance to freeze the target.
+822,fiery-wrath,gen-viii,dark,special,90.0,100.0,10.0,0,20.0,Has a chance to make the target flinch.
+823,thunderous-kick,gen-viii,fighting,physical,90.0,100.0,10.0,0,100.0,Lowers the target’s Defense by one stage after inflicting damage.
+824,glacial-lance,gen-viii,ice,physical,120.0,100.0,5.0,0,,Inflicts regular damage with no additional effect.
+825,astral-barrage,gen-viii,ghost,special,120.0,100.0,5.0,0,,Inflicts regular damage with no additional effect.
+826,eerie-spell,gen-viii,psychic,special,80.0,100.0,5.0,0,100.0,The target loses 3 PP from the last move it used.
+827,dire-claw,gen-viii,poison,physical,80.0,100.0,15.0,0,,
+828,psyshield-bash,gen-viii,psychic,physical,70.0,90.0,10.0,0,,
+829,power-shift,gen-viii,normal,status,0.0,,10.0,0,,
+830,stone-axe,gen-viii,rock,physical,65.0,90.0,15.0,0,,
+831,springtide-storm,gen-viii,fairy,special,100.0,80.0,5.0,0,,
+832,mystical-power,gen-viii,psychic,special,70.0,90.0,10.0,0,,
+833,raging-fury,gen-viii,fire,physical,120.0,100.0,10.0,0,,
+834,wave-crash,gen-viii,water,physical,120.0,100.0,10.0,0,,
+835,chloroblast,gen-viii,grass,special,150.0,95.0,5.0,0,,
+836,mountain-gale,gen-viii,ice,physical,100.0,85.0,10.0,0,,
+837,victory-dance,gen-viii,fighting,status,0.0,,10.0,0,,
+838,headlong-rush,gen-viii,ground,physical,120.0,100.0,5.0,0,,
+839,barb-barrage,gen-viii,poison,physical,60.0,100.0,10.0,0,,
+840,esper-wing,gen-viii,psychic,special,80.0,100.0,10.0,0,,
+841,bitter-malice,gen-viii,ghost,special,75.0,100.0,10.0,0,,
+842,shelter,gen-viii,steel,status,0.0,,10.0,0,,
+843,triple-arrows,gen-viii,fighting,physical,90.0,100.0,10.0,0,,
+844,infernal-parade,gen-viii,ghost,special,60.0,100.0,15.0,0,,
+845,ceaseless-edge,gen-viii,dark,physical,65.0,90.0,15.0,0,,
+846,bleakwind-storm,gen-viii,flying,special,100.0,80.0,10.0,0,,
+847,wildbolt-storm,gen-viii,electric,special,100.0,80.0,10.0,0,,
+848,sandsear-storm,gen-viii,ground,special,100.0,80.0,10.0,0,,
+849,lunar-blessing,gen-viii,psychic,status,0.0,,5.0,0,,
+850,take-heart,gen-viii,psychic,status,0.0,,10.0,0,,
+851,tera-blast,gen-ix,normal,special,80.0,100.0,10.0,0,,
+852,silk-trap,gen-ix,bug,status,0.0,,10.0,4,,
+853,axe-kick,gen-ix,fighting,physical,120.0,90.0,10.0,0,,
+854,last-respects,gen-ix,ghost,physical,50.0,100.0,10.0,0,,
+855,lumina-crash,gen-ix,psychic,special,80.0,100.0,10.0,0,,
+856,order-up,gen-ix,dragon,physical,80.0,100.0,10.0,0,,
+857,jet-punch,gen-ix,water,physical,60.0,100.0,15.0,1,,
+858,spicy-extract,gen-ix,grass,status,0.0,,15.0,0,,
+859,spin-out,gen-ix,steel,physical,100.0,100.0,5.0,0,,
+860,population-bomb,gen-ix,normal,physical,20.0,90.0,10.0,0,,
+861,ice-spinner,gen-ix,ice,physical,80.0,100.0,15.0,0,,
+862,glaive-rush,gen-ix,dragon,physical,120.0,100.0,5.0,0,,
+863,revival-blessing,gen-ix,normal,status,0.0,,1.0,0,,
+864,salt-cure,gen-ix,rock,physical,40.0,100.0,15.0,0,,
+865,triple-dive,gen-ix,water,physical,30.0,95.0,10.0,0,,
+866,mortal-spin,gen-ix,poison,physical,30.0,100.0,15.0,0,,
+867,doodle,gen-ix,normal,status,0.0,100.0,10.0,0,,
+868,fillet-away,gen-ix,normal,status,0.0,,10.0,0,,
+869,kowtow-cleave,gen-ix,dark,physical,85.0,,10.0,0,,
+870,flower-trick,gen-ix,grass,physical,70.0,,10.0,0,,
+871,torch-song,gen-ix,fire,special,80.0,100.0,10.0,0,,
+872,aqua-step,gen-ix,water,physical,80.0,100.0,10.0,0,,
+873,raging-bull,gen-ix,normal,physical,90.0,100.0,10.0,0,,
+874,make-it-rain,gen-ix,steel,special,120.0,100.0,5.0,0,,
+875,psyblade,gen-ix,psychic,physical,80.0,100.0,15.0,0,,
+876,hydro-steam,gen-ix,water,special,80.0,100.0,15.0,0,,
+877,ruination,gen-ix,dark,special,1.0,90.0,10.0,0,,
+878,collision-course,gen-ix,fighting,physical,100.0,100.0,5.0,0,,
+879,electro-drift,gen-ix,electric,special,100.0,100.0,5.0,0,,
+880,shed-tail,gen-ix,normal,status,0.0,,10.0,0,,
+881,chilly-reception,gen-ix,ice,status,0.0,,10.0,0,,
+882,tidy-up,gen-ix,normal,status,0.0,,10.0,0,,
+883,snowscape,gen-ix,ice,status,0.0,,10.0,0,,
+884,pounce,gen-ix,bug,physical,50.0,100.0,20.0,0,,
+885,trailblaze,gen-ix,grass,physical,50.0,100.0,20.0,0,,
+886,chilling-water,gen-ix,water,special,50.0,100.0,20.0,0,,
+887,hyper-drill,gen-ix,normal,physical,100.0,100.0,5.0,0,,
+888,twin-beam,gen-ix,psychic,special,40.0,100.0,10.0,0,,
+889,rage-fist,gen-ix,ghost,physical,50.0,100.0,10.0,0,,
+890,armor-cannon,gen-ix,fire,special,120.0,100.0,5.0,0,,
+891,bitter-blade,gen-ix,fire,physical,90.0,100.0,10.0,0,,
+892,double-shock,gen-ix,electric,physical,120.0,100.0,5.0,0,,
+893,gigaton-hammer,gen-ix,steel,physical,160.0,100.0,5.0,0,,
+894,comeuppance,gen-ix,dark,physical,1.0,100.0,10.0,0,,
+895,aqua-cutter,gen-ix,water,physical,70.0,100.0,20.0,0,,
+896,blazing-torque,gen-ix,fire,physical,80.0,100.0,10.0,0,,
+897,wicked-torque,gen-ix,dark,physical,80.0,100.0,10.0,0,,
+898,noxious-torque,gen-ix,poison,physical,100.0,100.0,10.0,0,,
+899,combat-torque,gen-ix,fighting,physical,100.0,100.0,10.0,0,,
+900,magical-torque,gen-ix,fairy,physical,100.0,100.0,10.0,0,,
+901,blood-moon,gen-ix,normal,special,140.0,100.0,5.0,0,,
+902,matcha-gotcha,gen-ix,grass,special,80.0,90.0,15.0,0,,
+903,syrup-bomb,gen-ix,grass,special,60.0,85.0,10.0,0,,
+904,ivy-cudgel,gen-ix,grass,physical,100.0,100.0,10.0,0,,
+905,electro-shot,gen-ix,electric,special,130.0,100.0,10.0,0,,
+906,tera-starstorm,gen-ix,normal,special,120.0,100.0,5.0,0,,
+907,fickle-beam,gen-ix,dragon,special,80.0,100.0,5.0,0,,
+908,burning-bulwark,gen-ix,fire,status,0.0,0.0,10.0,4,,
+909,thunderclap,gen-ix,electric,special,70.0,100.0,5.0,1,,
+910,mighty-cleave,gen-ix,rock,physical,95.0,100.0,5.0,0,,
+911,tachyon-cutter,gen-ix,steel,special,50.0,0.0,10.0,0,,
+912,hard-press,gen-ix,steel,physical,0.0,100.0,10.0,0,,
+913,dragon-cheer,gen-ix,dragon,status,0.0,0.0,15.0,0,,
+914,alluring-voice,gen-ix,fairy,special,80.0,100.0,10.0,0,,
+915,temper-flare,gen-ix,fire,physical,75.0,100.0,10.0,0,,
+916,supercell-slam,gen-ix,electric,physical,100.0,95.0,15.0,0,,
+917,psychic-noise,gen-ix,psychic,special,75.0,100.0,10.0,0,,
+918,upper-hand,gen-ix,fighting,physical,65.0,100.0,15.0,3,,
+919,malignant-chain,gen-ix,poison,special,100.0,100.0,5.0,0,,
+10001,shadow-rush,gen-iii,shadow,physical,55.0,100.0,,0,,Has an increased chance for a critical hit in Hyper Mode.
+10002,shadow-blast,gen-iii,shadow,physical,80.0,100.0,,0,,Has an increased chance for a critical hit.
+10003,shadow-blitz,gen-iii,shadow,physical,40.0,100.0,,0,,Inflicts regular damage with no additional effect.
+10004,shadow-bolt,gen-iii,shadow,special,75.0,100.0,,0,10.0,Has a chance to paralyze the target.
+10005,shadow-break,gen-iii,shadow,physical,75.0,100.0,,0,,Inflicts regular damage with no additional effect.
+10006,shadow-chill,gen-iii,shadow,special,75.0,100.0,,0,10.0,Has a chance to freeze the target.
+10007,shadow-end,gen-iii,shadow,physical,120.0,60.0,,0,,User receives 1/2 its HP in recoil.
+10008,shadow-fire,gen-iii,shadow,special,75.0,100.0,,0,10.0,Has a chance to burn the target.
+10009,shadow-rave,gen-iii,shadow,special,70.0,100.0,,0,,Inflicts regular damage with no additional effect.
+10010,shadow-storm,gen-iii,shadow,special,95.0,100.0,,0,,Inflicts regular damage with no additional effect.
+10011,shadow-wave,gen-iii,shadow,special,50.0,100.0,,0,,Inflicts regular damage with no additional effect.
+10012,shadow-down,gen-iii,shadow,status,,100.0,,0,,Lowers the target’s Defense by two stages.
+10013,shadow-half,gen-iii,shadow,special,,100.0,,0,,Halves HP of all Pokémon on the field.  Must recharge
+10014,shadow-hold,gen-iii,shadow,status,,,,0,,Prevents the target from leaving battle.
+10015,shadow-mist,gen-iii,shadow,status,,100.0,,0,,Lowers the target’s evasion by two stages.
+10016,shadow-panic,gen-iii,shadow,status,,90.0,,0,,Confuses the target.
+10017,shadow-shed,gen-iii,shadow,status,,,,0,,"Removes Light Screen, Reflect, and Safeguard."
+10018,shadow-sky,gen-iii,shadow,status,,,,0,,Changes the weather to Shadow Sky for five turns.

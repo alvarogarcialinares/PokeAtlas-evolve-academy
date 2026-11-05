@@ -1,0 +1,13 @@
+pandas
+requests
+python-dotenv
+google-genai
+langchain
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+langchain-chroma
+chromadb
+langgraph
+streamlit>=1.41
+jupyter

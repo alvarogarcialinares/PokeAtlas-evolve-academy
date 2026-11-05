@@ -1,0 +1,26 @@
+# Secretos
+.env
+
+# Base vectorial local
+chroma_db/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+.streamlit/secrets.toml
