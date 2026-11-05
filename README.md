@@ -1,8 +1,15 @@
 # 🎮 PokéAtlas
 
-PokéAtlas es un asistente experto en datos de Pokémon construido como proyecto final de IA Generativa. El sistema utiliza una arquitectura **RAG (Retrieval-Augmented Generation)** con **Google Gemini**, **ChromaDB** y **LangGraph**, incorpora memoria conversacional y dispone de una interfaz opcional en **Streamlit**.
+PokéAtlas es un asistente experto en datos de Pokémon construido como proyecto final de IA Generativa. El sistema utiliza una arquitectura **RAG (Retrieval-Augmented Generation)** con **Google Gemini**, **ChromaDB** y **LangGraph**, incorpora memoria conversacional y dispone de una interfaz web desplegada con **Streamlit**.
 
 El objetivo es responder preguntas sobre especies y formas, tipos, estadísticas base, movimientos y habilidades utilizando una base de conocimiento propia, evitando inventar información que no esté respaldada por los datos recuperados.
+
+## 🌐 Demo pública
+
+La aplicación está desplegada en Streamlit Community Cloud:
+
+**PokéAtlas:**  
+https://pokeatlas-qfzkupsdhdqzkkw4smke98.streamlit.app/
 
 ---
 
@@ -20,7 +27,7 @@ El objetivo es responder preguntas sobre especies y formas, tipos, estadísticas
   - búsqueda exacta por entidad cuando el nombre puede identificarse;
   - fallback semántico cuando no hay coincidencia exacta, por ejemplo ante errores tipográficos.
 - Streaming de respuestas en la interfaz web.
-- Interfaz local opcional con Streamlit.
+- Interfaz pública desplegada con Streamlit.
 
 ---
 
@@ -62,7 +69,7 @@ Esta estrategia permite reducir llamadas innecesarias a embeddings cuando la ent
 - **LangGraph** para el flujo del agente y la memoria.
 - **Python**.
 - **Jupyter Notebook** para desarrollo y demostración.
-- **Streamlit** para la interfaz web opcional.
+- **Streamlit** para la interfaz web y su despliegue público.
 
 Modelos utilizados en la versión final:
 
@@ -227,6 +234,8 @@ salir
 
 ## 🌐 Ejecución de la interfaz Streamlit
 
+### Ejecución local
+
 Desde la raíz del proyecto:
 
 ```powershell
@@ -238,6 +247,12 @@ La aplicación se sirve normalmente en:
 ```text
 http://localhost:8501
 ```
+
+### Despliegue público
+
+La versión pública está disponible en:
+
+https://pokeatlas-qfzkupsdhdqzkkw4smke98.streamlit.app/
 
 La interfaz permite:
 
@@ -438,15 +453,29 @@ Archivos excluidos del repositorio:
 .streamlit/secrets.toml
 ```
 
-Para despliegue en Streamlit Cloud, la clave debe configurarse mediante el gestor de secretos de la plataforma.
+En Streamlit Community Cloud, la clave se configura mediante el gestor de secretos de la plataforma.
 
 ---
 
-## 🚀 Streamlit Cloud
+## 🚀 Despliegue en Streamlit Cloud
 
-La interfaz Streamlit está preparada para ejecución local.
+PokéAtlas está desplegado públicamente en Streamlit Community Cloud.
 
-Para el despliegue público será necesario garantizar que la aplicación tenga acceso a la colección de ChromaDB. Actualmente `chroma_db/` puede mantenerse fuera de Git durante el desarrollo local, pero antes del despliegue debe definirse una estrategia de distribución o reconstrucción de la base vectorial.
+La aplicación utiliza:
+
+```text
+Repository: alvarogarcialinares/PokeAtlas-evolve-academy
+Branch: main
+Main file: app.py
+```
+
+La base persistente de ChromaDB está incluida en el repositorio para que la aplicación pueda reutilizar directamente los **855 vectores** sin reconstruir los embeddings al iniciar.
+
+La clave `GEMINI_API_KEY` se configura como secreto dentro de Streamlit Cloud y no forma parte del repositorio.
+
+**URL pública:**
+
+https://pokeatlas-qfzkupsdhdqzkkw4smke98.streamlit.app/
 
 ---
 
@@ -464,7 +493,7 @@ Para el despliegue público será necesario garantizar que la aplicación tenga 
 - [x] Control de alucinaciones.
 - [x] Retrieval híbrido.
 - [x] Interfaz Streamlit local.
-- [ ] Despliegue público en Streamlit Cloud.
+- [x] Despliegue público en Streamlit Cloud.
 
 ---
 
