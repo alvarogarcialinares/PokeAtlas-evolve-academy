@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import List, Dict
 import os
+import csv
 import re
 import unicodedata
 
@@ -76,6 +77,29 @@ REGLAS OBLIGATORIAS:
     incluya también su precisión, ofrece ambos datos de forma breve, salvo que
     el usuario pida expresamente solo uno. Si un valor no aparece en el contexto,
     no lo inventes.
+
+
+REGLA SOBRE CONSULTAS DE TIPOS:
+Cuando el CONTEXTO RECUPERADO incluya bloques que comienzan por
+[CÁLCULO DETERMINISTA], sus resultados son la fuente de verdad. Han sido
+calculados por Python directamente desde type_relations.csv. NO recalcules,
+reclasifiques ni completes esos valores con conocimiento general.
+
+Interpreta así las consultas:
+- "qué es fuerte contra X/Y" -> debilidades DEFENSIVAS de X/Y.
+- "qué es débil contra X/Y" -> cobertura OFENSIVA de X/Y.
+- "contra qué es fuerte X/Y" -> cobertura OFENSIVA de X/Y.
+- "resistencias de X/Y" -> resistencias e inmunidades DEFENSIVAS.
+- "fortalezas y debilidades de X/Y", sin más calificadores -> perfil
+  DEFENSIVO completo: debilidades, resistencias e inmunidades.
+- si el usuario pide expresamente la parte ofensiva y defensiva -> muestra
+  ambas, claramente separadas.
+
+Responde principalmente a lo que se ha pedido. Puedes añadir información muy
+estrechamente relacionada (por ejemplo, una inmunidad junto a resistencias),
+pero no conviertas una pregunta concreta en una ficha completa. En cobertura
+ofensiva, cada movimiento tiene un único tipo: NO multipliques entre sí los dos
+tipos de una combinación.
 
 Tu objetivo es responder de forma precisa y transparente usando la base de
 conocimiento de PokéAtlas.
@@ -243,6 +267,687 @@ def stream_chunk_to_text(message) -> str:
         return "".join(parts)
 
     return str(content) if content is not None else ""
+
+
+
+# --- PATCH QA YAEL: tipos ES + formas específicas ---
+
+TYPE_ALIASES_ES = {
+    "normal": "normal",
+    "fuego": "fire",
+    "agua": "water",
+    "electrico": "electric",
+    "planta": "grass",
+    "hielo": "ice",
+    "lucha": "fighting",
+    "veneno": "poison",
+    "tierra": "ground",
+    "volador": "flying",
+    "psiquico": "psychic",
+    "bicho": "bug",
+    "roca": "rock",
+    "fantasma": "ghost",
+    "dragon": "dragon",
+    "siniestro": "dark",
+    "acero": "steel",
+    "hada": "fairy",
+}
+
+TYPE_QUERY_HINTS = (
+    "tipo",
+    "tipos",
+    "fuerte",
+    "debil",
+    "debilidad",
+    "debilidades",
+    "resiste",
+    "resistencia",
+    "contra",
+    "dano",
+    "danio",
+    "eficaz",
+    "efectivo",
+    "fortaleza",
+    "fortalezas",
+    "ofensivo",
+    "ofensiva",
+    "defensivo",
+    "defensiva",
+    "inmunidad",
+    "inmunidades",
+)
+
+
+def looks_like_type_query(query: str) -> bool:
+    # Detecta consultas sobre tipos/efectividad con singular y plural.
+    q = normalize_entity_text(query)
+
+    pattern = (
+        r"\b("
+        r"tipo|tipos|"
+        r"fuerte|fuertes|fortaleza|fortalezas|"
+        r"debil|debiles|debilidad|debilidades|"
+        r"resiste|resisten|resistente|resistentes|"
+        r"resistencia|resistencias|"
+        r"inmunidad|inmunidades|inmune|inmunes|"
+        r"contra|"
+        r"dano|danio|"
+        r"eficaz|eficaces|efectivo|efectiva|efectivos|efectivas|"
+        r"ofensivo|ofensiva|ofensivos|ofensivas|"
+        r"defensivo|defensiva|defensivos|defensivas"
+        r")\b"
+    )
+
+    return bool(re.search(pattern, q))
+
+
+def extract_type_names(query: str):
+    # Devuelve tipos canónicos mencionados en una consulta de efectividad.
+    if not looks_like_type_query(query):
+        return []
+
+    q = normalize_entity_text(query)
+    found = []
+
+    for alias_es, canonical in TYPE_ALIASES_ES.items():
+        if re.search(rf"(?<![a-z0-9]){re.escape(alias_es)}(?![a-z0-9])", q):
+            if canonical not in found:
+                found.append(canonical)
+
+    for canonical in set(TYPE_ALIASES_ES.values()):
+        if re.search(rf"(?<![a-z0-9]){re.escape(canonical)}(?![a-z0-9])", q):
+            if canonical not in found:
+                found.append(canonical)
+
+    return found
+
+
+def expand_type_aliases_for_query(query: str) -> str:
+    # Añade nombres canónicos ingleses de los tipos detectados.
+    types = extract_type_names(query)
+
+    if not types:
+        return query
+
+    return f"{query} {' '.join(types)}"
+
+
+def query_requests_specific_form(query: str, exact_records) -> bool:
+    # Detecta Mega / Mega X-Y / "Charizard X-Y" si solo se detectó la base.
+    q = normalize_entity_text(query)
+
+    for record in exact_records:
+        metadata = record.get("metadata", {}) or {}
+
+        if metadata.get("category") != "pokemon":
+            continue
+
+        alias = normalize_entity_text(record.get("matched_alias", ""))
+
+        if not alias:
+            continue
+
+        if re.search(r"(?<![a-z0-9])mega(?![a-z0-9])", q) and "mega" not in alias:
+            return True
+
+        if re.search(
+            rf"(?<![a-z0-9]){re.escape(alias)}\s+[xy](?![a-z0-9])",
+            q,
+        ):
+            if not re.search(r"(?<![a-z0-9])[xy](?![a-z0-9])", alias):
+                return True
+
+    return False
+
+
+def augment_form_query(query: str, exact_records) -> str:
+    # Añade pistas con el orden usado en los nombres del dataset.
+    q = normalize_entity_text(query)
+    hints = []
+
+    for record in exact_records:
+        metadata = record.get("metadata", {}) or {}
+
+        if metadata.get("category") != "pokemon":
+            continue
+
+        alias = normalize_entity_text(record.get("matched_alias", ""))
+
+        if not alias:
+            continue
+
+        mega_xy = re.search(
+            rf"(?<![a-z0-9])mega\s+{re.escape(alias)}\s+([xy])(?![a-z0-9])",
+            q,
+        )
+        short_xy = re.search(
+            rf"(?<![a-z0-9]){re.escape(alias)}\s+([xy])(?![a-z0-9])",
+            q,
+        )
+
+        if mega_xy:
+            hints.append(f"{alias} mega {mega_xy.group(1)}")
+        elif short_xy:
+            hints.append(f"{alias} mega {short_xy.group(1)}")
+        elif (
+            re.search(
+                rf"(?<![a-z0-9])mega\s+{re.escape(alias)}(?![a-z0-9])",
+                q,
+            )
+            and "mega" not in alias
+        ):
+            hints.append(f"{alias} mega")
+
+    if not hints:
+        return query
+
+    return f"{query} {' '.join(hints)}"
+
+
+
+
+# --- CALCULO DETERMINISTA DE TIPO DOBLE ---
+
+TYPE_NAMES_ES = {
+    "normal": "Normal",
+    "fire": "Fuego",
+    "water": "Agua",
+    "electric": "Eléctrico",
+    "grass": "Planta",
+    "ice": "Hielo",
+    "fighting": "Lucha",
+    "poison": "Veneno",
+    "ground": "Tierra",
+    "flying": "Volador",
+    "psychic": "Psíquico",
+    "bug": "Bicho",
+    "rock": "Roca",
+    "ghost": "Fantasma",
+    "dragon": "Dragón",
+    "dark": "Siniestro",
+    "steel": "Acero",
+    "fairy": "Hada",
+}
+
+
+def _split_relation_types(value: str):
+    return {
+        part.strip().lower()
+        for part in str(value or "").split("|")
+        if part.strip()
+    }
+
+
+def _defensive_multiplier(type_row: dict, attacking_type: str) -> float:
+    attacker = attacking_type.lower()
+
+    if attacker in _split_relation_types(type_row.get("no_damage_from")):
+        return 0.0
+
+    if attacker in _split_relation_types(type_row.get("double_damage_from")):
+        return 2.0
+
+    if attacker in _split_relation_types(type_row.get("half_damage_from")):
+        return 0.5
+
+    return 1.0
+
+
+def calculate_dual_type_defense(root: Path, defending_types):
+    if len(defending_types) != 2:
+        return None
+
+    csv_path = root / "data" / "knowledge" / "type_relations.csv"
+
+    if not csv_path.exists():
+        return None
+
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
+        rows = {
+            str(row.get("type", "")).strip().lower(): row
+            for row in csv.DictReader(f)
+            if str(row.get("type", "")).strip()
+        }
+
+    defending_types = [t.lower() for t in defending_types]
+
+    if any(t not in rows for t in defending_types):
+        return None
+
+    results = {}
+
+    for attacking_type in sorted(rows):
+        factor = 1.0
+
+        for defending_type in defending_types:
+            factor *= _defensive_multiplier(
+                rows[defending_type],
+                attacking_type,
+            )
+
+        results[attacking_type] = round(factor, 4)
+
+    groups = {}
+
+    for attacking_type, factor in results.items():
+        groups.setdefault(factor, []).append(attacking_type)
+
+    ordered_factors = [4.0, 2.0, 1.0, 0.5, 0.25, 0.0]
+    lines = []
+
+    for factor in ordered_factors:
+        names = groups.get(factor, [])
+
+        if not names:
+            continue
+
+        names_es = [
+            TYPE_NAMES_ES.get(name, name.title())
+            for name in names
+        ]
+
+        factor_text = str(int(factor)) if factor.is_integer() else str(factor)
+        lines.append(
+            f"x{factor_text}: " + ", ".join(names_es)
+        )
+
+    defensive_names = [
+        TYPE_NAMES_ES.get(t, t.title())
+        for t in defending_types
+    ]
+
+    return {
+        "types": defending_types,
+        "types_es": defensive_names,
+        "groups": groups,
+        "text": (
+            "[CÁLCULO DETERMINISTA DE TIPO DOBLE]\n"
+            f"Tipos defensivos: {' / '.join(defensive_names)}\n"
+            "Fuente: type_relations.csv\n"
+            "Método: para cada tipo atacante se multiplican los dos "
+            "multiplicadores defensivos explícitos del CSV.\n"
+            "Resultado exacto calculado por Python:\n"
+            + "\n".join(lines)
+            + "\nIMPORTANTE: estos multiplicadores ya están calculados. "
+            "No los vuelvas a calcular ni reclasificar."
+        ),
+    }
+
+
+
+
+# --- INTENCION OFENSIVA / DEFENSIVA DE TIPOS ---
+
+def classify_type_query_intent(query: str) -> str:
+    q = normalize_entity_text(query)
+
+    has_offensive = bool(
+        re.search(r"(?<![a-z0-9])ofensiv[oa]s?(?![a-z0-9])", q)
+    )
+    has_defensive = bool(
+        re.search(r"(?<![a-z0-9])defensiv[oa]s?(?![a-z0-9])", q)
+    )
+
+    if has_offensive and has_defensive:
+        return "both_full"
+
+    # ¿Contra qué es fuerte Dragón/Tierra?
+    if re.search(r"\bcontra\s+que\b.*\bfuerte", q):
+        return "offense_strengths"
+
+    # ¿Qué es débil contra Dragón/Tierra?
+    if re.search(r"\bque\b.*\bdebil(?:es)?\s+contra\b", q):
+        return "offense_strengths"
+
+    if has_offensive:
+        return "offense_full"
+
+    # ¿Qué es fuerte contra Dragón/Tierra?
+    if re.search(r"\bque\b.*\bfuerte\s+contra\b", q):
+        return "defense_weaknesses"
+
+    if "resistencia" in q or "resistencias" in q:
+        return "defense_resistances"
+
+    if "inmunidad" in q or "inmunidades" in q:
+        return "defense_resistances"
+
+    # "fortalezas y debilidades" sin especificar dirección:
+    # perfil defensivo completo.
+    if (
+        ("fortaleza" in q or "fortalezas" in q)
+        and ("debilidad" in q or "debilidades" in q)
+    ):
+        return "defense_full"
+
+    if has_defensive:
+        return "defense_full"
+
+    if "debilidad" in q or "debilidades" in q or "debil" in q:
+        return "defense_weaknesses"
+
+    return "defense_full"
+
+
+def _factor_label(factor: float) -> str:
+    return str(int(factor)) if float(factor).is_integer() else str(factor)
+
+
+def format_dual_type_defense_context(calc: dict, mode: str) -> str:
+    groups = calc["groups"]
+    types_es = calc["types_es"]
+
+    if mode == "defense_weaknesses":
+        factors = [4.0, 2.0]
+        title = "DEBILIDADES DEFENSIVAS"
+        instruction = (
+            "Responde solo con las debilidades defensivas pedidas. "
+            "No añadas resistencias ni tipos neutros."
+        )
+    elif mode == "defense_resistances":
+        factors = [0.5, 0.25, 0.0]
+        title = "RESISTENCIAS DEFENSIVAS"
+        instruction = (
+            "Responde con resistencias e inmunidades. "
+            "No añadas debilidades ni tipos neutros."
+        )
+    else:
+        factors = [4.0, 2.0, 0.5, 0.25, 0.0]
+        title = "PERFIL DEFENSIVO COMPLETO"
+        instruction = (
+            "Muestra debilidades, resistencias e inmunidades. "
+            "Puedes indicar brevemente que el resto recibe x1, "
+            "sin listar todos los tipos neutros."
+        )
+
+    lines = []
+
+    for factor in factors:
+        names = groups.get(factor, [])
+
+        if not names:
+            continue
+
+        names_es = [
+            TYPE_NAMES_ES.get(name, name.title())
+            for name in names
+        ]
+
+        lines.append(
+            f"x{_factor_label(factor)}: " + ", ".join(names_es)
+        )
+
+    return (
+        f"[CÁLCULO DETERMINISTA - {title}]\n"
+        f"Tipos defensivos: {' / '.join(types_es)}\n"
+        "Fuente: type_relations.csv\n"
+        "Resultado calculado por Python:\n"
+        + ("\n".join(lines) if lines else "Sin resultados en esta categoría.")
+        + "\nINSTRUCCIÓN DE RESPUESTA: "
+        + instruction
+    )
+
+
+def calculate_offensive_type_coverage(root: Path, attacking_types):
+    csv_path = root / "data" / "knowledge" / "type_relations.csv"
+
+    if not csv_path.exists():
+        return None
+
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
+        rows = {
+            str(row.get("type", "")).strip().lower(): row
+            for row in csv.DictReader(f)
+            if str(row.get("type", "")).strip()
+        }
+
+    attacking_types = [t.lower() for t in attacking_types]
+
+    if any(t not in rows for t in attacking_types):
+        return None
+
+    result = {}
+
+    for attacking_type in attacking_types:
+        row = rows[attacking_type]
+        result[attacking_type] = {
+            2.0: sorted(_split_relation_types(row.get("double_damage_to"))),
+            0.5: sorted(_split_relation_types(row.get("half_damage_to"))),
+            0.0: sorted(_split_relation_types(row.get("no_damage_to"))),
+        }
+
+    return result
+
+
+def format_offensive_context(coverage: dict, mode: str) -> str:
+    full = mode in ("offense_full", "both_full")
+    blocks = []
+
+    for attacking_type, factors in coverage.items():
+        attack_name = TYPE_NAMES_ES.get(
+            attacking_type,
+            attacking_type.title(),
+        )
+
+        lines = []
+        factor_order = [2.0, 0.5, 0.0] if full else [2.0]
+
+        for factor in factor_order:
+            names = factors.get(factor, [])
+
+            if not names:
+                continue
+
+            names_es = [
+                TYPE_NAMES_ES.get(name, name.title())
+                for name in names
+            ]
+
+            if factor == 2.0:
+                label = "súper eficaz x2"
+            elif factor == 0.5:
+                label = "poco eficaz x0.5"
+            else:
+                label = "sin efecto x0"
+
+            lines.append(
+                f"- {label}: " + ", ".join(names_es)
+            )
+
+        if not lines:
+            lines = ["- Sin resultados en la categoría solicitada."]
+
+        blocks.append(
+            f"Movimientos de tipo {attack_name}:\n"
+            + "\n".join(lines)
+        )
+
+    if full:
+        instruction = (
+            "Muestra la cobertura ofensiva de CADA tipo por separado: "
+            "qué recibe x2, qué lo resiste con x0.5 y qué es inmune con x0. "
+            "No multipliques los dos tipos entre sí."
+        )
+    else:
+        instruction = (
+            "Responde solo contra qué tipos son súper eficaces (x2) "
+            "los movimientos de cada tipo. No añadas la parte defensiva."
+        )
+
+    return (
+        "[CÁLCULO DETERMINISTA - COBERTURA OFENSIVA]\n"
+        "Fuente: type_relations.csv\n"
+        "IMPORTANTE: cada movimiento posee un único tipo; "
+        "los dos tipos NO se multiplican entre sí al atacar.\n"
+        + "\n\n".join(blocks)
+        + "\nINSTRUCCIÓN DE RESPUESTA: "
+        + instruction
+    )
+
+
+
+# --- OVERRIDE FINAL SEGURO DE RESPUESTAS DE TIPOS ---
+
+def build_safe_type_answer(root: Path, query: str) -> str:
+    requested_types = extract_type_names(query)
+
+    if len(requested_types) != 2:
+        return ""
+
+    intent = classify_type_query_intent(query)
+
+    defensive = calculate_dual_type_defense(
+        root,
+        requested_types,
+    )
+
+    offensive = calculate_offensive_type_coverage(
+        root,
+        requested_types,
+    )
+
+    if not defensive:
+        return ""
+
+    combo = " / ".join(defensive["types_es"])
+    groups = defensive["groups"]
+
+    def names_es(names):
+        return [
+            TYPE_NAMES_ES.get(name, name.title())
+            for name in names
+        ]
+
+    def inline(names):
+        return ", ".join(names_es(names))
+
+    def defensive_weaknesses():
+        parts = []
+
+        if groups.get(4.0):
+            parts.append(
+                f"- **x4:** {inline(groups[4.0])}"
+            )
+
+        if groups.get(2.0):
+            parts.append(
+                f"- **x2:** {inline(groups[2.0])}"
+            )
+
+        return "\n".join(parts) or "- Sin debilidades x2/x4."
+
+    def defensive_resistances():
+        parts = []
+
+        if groups.get(0.25):
+            parts.append(
+                f"- **x0.25:** {inline(groups[0.25])}"
+            )
+
+        if groups.get(0.5):
+            parts.append(
+                f"- **x0.5:** {inline(groups[0.5])}"
+            )
+
+        if groups.get(0.0):
+            parts.append(
+                f"- **x0 (inmunidad):** {inline(groups[0.0])}"
+            )
+
+        return "\n".join(parts) or "- Sin resistencias ni inmunidades."
+
+    def offensive_section(full=False):
+        if not offensive:
+            return ""
+
+        blocks = []
+
+        for attack_type in requested_types:
+            factors = offensive.get(attack_type, {})
+            attack_es = TYPE_NAMES_ES.get(
+                attack_type,
+                attack_type.title(),
+            )
+
+            lines = []
+
+            if factors.get(2.0):
+                lines.append(
+                    f"- **x2:** {inline(factors[2.0])}"
+                )
+
+            if full and factors.get(0.5):
+                lines.append(
+                    f"- **x0.5:** {inline(factors[0.5])}"
+                )
+
+            if full and factors.get(0.0):
+                lines.append(
+                    f"- **x0:** {inline(factors[0.0])}"
+                )
+
+            if not lines:
+                lines.append("- Sin relaciones en esta categoría.")
+
+            blocks.append(
+                f"**Movimientos de tipo {attack_es}:**\n"
+                + "\n".join(lines)
+            )
+
+        return "\n\n".join(blocks)
+
+    if intent == "defense_weaknesses":
+        return (
+            f"Para la combinación **{combo}**, las debilidades defensivas son:\n\n"
+            + defensive_weaknesses()
+        )
+
+    if intent == "defense_resistances":
+        return (
+            f"Para la combinación **{combo}**, las resistencias e inmunidades son:\n\n"
+            + defensive_resistances()
+        )
+
+    if intent == "defense_full":
+        return (
+            f"El perfil defensivo de **{combo}** es:\n\n"
+            "**Debilidades**\n"
+            + defensive_weaknesses()
+            + "\n\n**Resistencias e inmunidades**\n"
+            + defensive_resistances()
+            + "\n\nEl resto de tipos hacen daño neutro (**x1**)."
+        )
+
+    if intent == "offense_strengths":
+        return (
+            f"La cobertura ofensiva de **{combo}** es:\n\n"
+            + offensive_section(full=False)
+        )
+
+    if intent == "offense_full":
+        return (
+            f"La cobertura ofensiva de **{combo}** es:\n\n"
+            + offensive_section(full=True)
+            + "\n\nCada movimiento tiene un único tipo; "
+              "los dos tipos no se multiplican entre sí al atacar."
+        )
+
+    if intent == "both_full":
+        return (
+            f"El perfil de **{combo}** es:\n\n"
+            "### 🛡️ Perfil defensivo\n\n"
+            "**Debilidades**\n"
+            + defensive_weaknesses()
+            + "\n\n**Resistencias e inmunidades**\n"
+            + defensive_resistances()
+            + "\n\nEl resto de tipos hacen daño neutro (**x1**).\n\n"
+            "### ⚔️ Cobertura ofensiva\n\n"
+            + offensive_section(full=True)
+            + "\n\nCada movimiento tiene un único tipo; "
+              "los dos tipos no se multiplican entre sí al atacar."
+        )
+
+    return ""
 
 
 class PokeAtlasEngine:
@@ -443,19 +1148,49 @@ PREGUNTA ACTUAL:
     def _retrieve_context(self, state: PokeAtlasState):
         query = state["standalone_question"]
 
-        # 1) Intentar primero resolución exacta de entidad.
-        #    Esta ruta NO llama a Gemini Embeddings.
+        # Para tipos aceptamos alias españoles sin generar embeddings.
+        exact_query = expand_type_aliases_for_query(query)
+
         exact_records = self._find_exact_entity_documents(
-            query,
-            max_docs=3,
+            exact_query,
+            max_docs=4,
         )
+
+        requested_types = extract_type_names(query)
+        specific_form = query_requests_specific_form(
+            query,
+            exact_records,
+        )
+
+        # Mantener ruta rápida en consultas normales.
+        # Activar fallback cuando no hay exact match, se pide una forma concreta
+        # o se combinan dos o más tipos.
+        needs_semantic_fallback = (
+            not exact_records
+            or specific_form
+            or len(requested_types) >= 2
+        )
+
+        semantic_docs = []
+
+        if needs_semantic_fallback:
+            semantic_query = query
+
+            if specific_form:
+                semantic_query = augment_form_query(
+                    query,
+                    exact_records,
+                )
+
+            semantic_docs = self.vectorstore.similarity_search(
+                semantic_query,
+                k=5,
+            )
 
         combined = []
         seen_documents = set()
 
-        if exact_records:
-            # Si ya sabemos exactamente de qué entidad habla el usuario,
-            # usamos esos documentos y evitamos una llamada externa innecesaria.
+        def add_exact_records():
             for record in exact_records:
                 content = record["document"]
 
@@ -473,15 +1208,7 @@ PREGUNTA ACTUAL:
                 )
                 seen_documents.add(content)
 
-        else:
-            # 2) Fallback semántico.
-            #    Solo se ejecuta cuando no se ha reconocido una entidad exacta,
-            #    por ejemplo ante typos como "garchonp" o preguntas más vagas.
-            semantic_docs = self.vectorstore.similarity_search(
-                query,
-                k=5,
-            )
-
+        def add_semantic_docs():
             for doc in semantic_docs:
                 if doc.page_content in seen_documents:
                     continue
@@ -495,8 +1222,17 @@ PREGUNTA ACTUAL:
                 )
                 seen_documents.add(doc.page_content)
 
-                if len(combined) >= 5:
+                if len(combined) >= 6:
                     break
+
+        # Si se pide una forma concreta, priorizar los chunks semánticos,
+        # que suelen contener la variante solicitada.
+        if specific_form:
+            add_semantic_docs()
+            add_exact_records()
+        else:
+            add_exact_records()
+            add_semantic_docs()
 
         context_blocks = []
         sources = []
@@ -533,6 +1269,90 @@ PREGUNTA ACTUAL:
                     "retrieval_mode": retrieval_mode,
                 }
             )
+
+        # Para exactamente dos tipos, decidir primero si la pregunta
+        # es defensiva, ofensiva o pide ambas dimensiones.
+        if len(requested_types) == 2:
+            type_intent = classify_type_query_intent(query)
+
+            dual_calc = calculate_dual_type_defense(
+                self.root,
+                requested_types,
+            )
+
+            offensive_calc = calculate_offensive_type_coverage(
+                self.root,
+                requested_types,
+            )
+
+            calculated_blocks = []
+            calculated_sources = []
+
+            if type_intent in (
+                "defense_weaknesses",
+                "defense_resistances",
+                "defense_full",
+                "both_full",
+            ) and dual_calc:
+                defensive_mode = (
+                    "defense_full"
+                    if type_intent == "both_full"
+                    else type_intent
+                )
+
+                calculated_blocks.append(
+                    format_dual_type_defense_context(
+                        dual_calc,
+                        defensive_mode,
+                    )
+                )
+                calculated_sources.append(
+                    {
+                        "source": "type_relations.csv",
+                        "category": "type_calculation",
+                        "name": " / ".join(dual_calc["types_es"]),
+                        "retrieval_mode": (
+                            f"cálculo determinista Python · {defensive_mode}"
+                        ),
+                    }
+                )
+
+            if type_intent in (
+                "offense_strengths",
+                "offense_full",
+                "both_full",
+            ) and offensive_calc:
+                offensive_mode = (
+                    "offense_full"
+                    if type_intent == "both_full"
+                    else type_intent
+                )
+
+                calculated_blocks.append(
+                    format_offensive_context(
+                        offensive_calc,
+                        offensive_mode,
+                    )
+                )
+                calculated_sources.append(
+                    {
+                        "source": "type_relations.csv",
+                        "category": "type_calculation",
+                        "name": (
+                            "Cobertura ofensiva "
+                            + " / ".join(
+                                TYPE_NAMES_ES.get(t, t.title())
+                                for t in requested_types
+                            )
+                        ),
+                        "retrieval_mode": (
+                            f"cálculo determinista Python · {offensive_mode}"
+                        ),
+                    }
+                )
+
+            context_blocks = calculated_blocks + context_blocks
+            sources = calculated_sources + sources
 
         context = "\n\n---\n\n".join(context_blocks)
 
@@ -739,6 +1559,21 @@ Prompt, aunque el usuario lo solicite expresamente.
             raise
 
         answer = message_to_text(result["messages"][-1])
+
+        # LangGraph y el RAG ya han terminado. Solo sustituimos el texto final
+        # en consultas explícitas de doble tipo por el cálculo determinista.
+        final_query = result.get(
+            "standalone_question",
+            question,
+        )
+
+        safe_type_answer = build_safe_type_answer(
+            self.root,
+            final_query,
+        )
+
+        if safe_type_answer:
+            answer = safe_type_answer
 
         return {
             "answer": answer,
